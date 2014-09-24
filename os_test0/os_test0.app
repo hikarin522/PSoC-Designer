@@ -1,5 +1,0 @@
-<PSOC_DB>
-  <PSOC_PROJECT_LIST>
-    <PSOC_PROJECT PATH="\os_test0\os_test0.cmx" IS_ACTIVE="TRUE" />
-  </PSOC_PROJECT_LIST>
-</PSOC_DB>
