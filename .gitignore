@@ -1,4 +1,23 @@
 #################
+## PSoC Designer
+#################
+
+*/*/*/lib/obj
+*/*/*/obj
+*/*/*/output
+BuildMsg.txt
+*.log
+*.lock
+*~
+*.bak
+*.pdb
+Thumbs.db
+*.a
+*.o
+*#*
+
+
+#################
 ## Eclipse
 #################
 

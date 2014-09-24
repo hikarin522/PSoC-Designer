@@ -1,6 +1,15 @@
 # Auto detect text files and perform LF normalization
 * text=auto
 
+# Custom for PSoC Designer
+*.hex binary
+*.cmx binary
+*.xml binary
+*.inc binary
+*.soc binary
+*.pep binary
+
+
 # Custom for Visual Studio
 *.cs     diff=csharp
 *.sln    merge=union
