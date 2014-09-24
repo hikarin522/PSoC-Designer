@@ -5,7 +5,9 @@
 */*/*/lib/obj
 */*/*/obj
 */*/*/output
+*/*/*/std/obj
 BuildMsg.txt
+project.mk
 *.log
 *.lock
 *~
@@ -14,6 +16,9 @@ BuildMsg.txt
 Thumbs.db
 *.a
 *.o
+*.lis
+*.opt
+*.s
 *#*
 
 
