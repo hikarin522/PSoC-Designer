@@ -1,0 +1,1026 @@
+ 0000                   cpu LMM
+                        .module matrix_led.c
+                        .area text(rom, con, rel)
+ 0000                   .dbfile ./matrix_led.c
+ 0000                   .dbfile C:\Users\hikari\DOCUME~1\PSOCDE~1.4PR\MATRIX~2\MATRIX~1\MATRIX~1\matrix_led.c
+ 0000                   .dbfunc e Matrix_ON _Matrix_ON fV
+ 0000           _Matrix_ON::
+ 0000                   .dbline -1
+ 0000                   .dbline 13
+ 0000           ; // Matrix_LED.c
+ 0000           ; // hikari
+ 0000           ; // Header : Matrix_LED.h
+ 0000           ; 
+ 0000           ; #include "Matrix_LED.h"
+ 0000           ; 
+ 0000           ; // Matrix_LED port Mask
+ 0000           ; #define Matrix_MASK (S_row_MASK | S_colA_MASK | S_colB_MASK | CLK_MASK | LATCH_MASK)
+ 0000           ; 
+ 0000           ; 
+ 0000           ; // LED ON
+ 0000           ; void Matrix_ON(void)
+ 0000           ; {
+ 0000                   .dbline 14
+ 0000           ;       EN_DataShadow |= EN_MASK;
+ 0000 62D000            mov REG[0xd0],>_Port_0_Data_SHADE
+ 0003 2E0020            or [_Port_0_Data_SHADE],32
+ 0006                   .dbline 15
+ 0006           ;       EN_Data_ADDR = EN_DataShadow;
+ 0006 5100              mov A,[_Port_0_Data_SHADE]
+ 0008 6000              mov REG[0],A
+ 000A                   .dbline -2
+ 000A           L5:
+ 000A                   .dbline 0 ; func end
+ 000A 7F                ret
+ 000B                   .dbend
+ 000B                   .dbfunc e Matirx_OFF _Matirx_OFF fV
+ 000B           _Matirx_OFF::
+ 000B                   .dbline -1
+ 000B                   .dbline 20
+ 000B           ; }
+ 000B           ; 
+ 000B           ; // LED OFF
+ 000B           ; void Matirx_OFF(void)
+ 000B           ; {
+ 000B                   .dbline 21
+ 000B           ;       EN_DataShadow &= ~EN_MASK;
+ 000B 62D000            mov REG[0xd0],>_Port_0_Data_SHADE
+ 000E 2600DF            and [_Port_0_Data_SHADE],-33
+ 0011                   .dbline 22
+ 0011           ;       EN_Data_ADDR = EN_DataShadow;
+ 0011 5100              mov A,[_Port_0_Data_SHADE]
+ 0013 6000              mov REG[0],A
+ 0015                   .dbline -2
+ 0015           L6:
+ 0015                   .dbline 0 ; func end
+ 0015 7F                ret
+ 0016                   .dbend
+ 0016                   .dbfunc e Matrix_DrawVector _Matrix_DrawVector fV
+ 0016           ;              i -> X+0
+ 0016           ;            col -> X-9
+ 0016           ;            row -> X-5
+ 0016           _Matrix_DrawVector::
+ 0016                   .dbline -1
+ 0016 10                push X
+ 0017 4F                mov X,SP
+ 0018 3808              add SP,8
+ 001A                   .dbline 27
+ 001A           ; }
+ 001A           ; 
+ 001A           ; // Draw Vector data : WORD, DWORD
+ 001A           ; void Matrix_DrawVector(WORD row, DWORD col)
+ 001A           ; {
+ 001A                   .dbline 29
+ 001A           ;       WORD i;
+ 001A           ;       for (i = 1; i != 0; i <<= 1)
+ 001A 560101            mov [X+1],1
+ 001D 560000            mov [X+0],0
+ 0020 80C5              xjmp L11
+ 0022           L8:
+ 0022                   .dbline 30
+ 0022           ;       {
+ 0022                   .dbline 31
+ 0022           ;               CLK_DataShadow &= ~Matrix_MASK;
+ 0022 62D000            mov REG[0xd0],>_Port_0_Data_SHADE
+ 0025 2600E0            and [_Port_0_Data_SHADE],-32
+ 0028                   .dbline 32
+ 0028           ;               CLK_Data_ADDR = CLK_DataShadow;
+ 0028 5100              mov A,[_Port_0_Data_SHADE]
+ 002A 6000              mov REG[0],A
+ 002C                   .dbline 34
+ 002C           ;               
+ 002C           ;               CLK_DataShadow |= (row & i) ? S_row_MASK : 0;
+ 002C 62D000            mov REG[0xd0],>__r0
+ 002F 52FC              mov A,[X-4]
+ 0031 2301              and A,[X+1]
+ 0033 5300              mov [__r1],A
+ 0035 52FB              mov A,[X-5]
+ 0037 2300              and A,[X+0]
+ 0039 3900              cmp A,0
+ 003B B006              jnz X0
+ 003D 3C0000            cmp [__r1],0
+ 0040 A009              jz L13
+ 0042           X0:
+ 0042 560301            mov [X+3],1
+ 0045 560200            mov [X+2],0
+ 0048 8007              xjmp L14
+ 004A           L13:
+ 004A 560300            mov [X+3],0
+ 004D 560200            mov [X+2],0
+ 0050           L14:
+ 0050 62D000            mov REG[0xd0],>_Port_0_Data_SHADE
+ 0053 5100              mov A,[_Port_0_Data_SHADE]
+ 0055 62D000            mov REG[0xd0],>__r0
+ 0058 5300              mov [__r1],A
+ 005A 5203              mov A,[X+3]
+ 005C 2C00              or [__r1],A
+ 005E 5100              mov A,[__r1]
+ 0060 62D000            mov REG[0xd0],>_Port_0_Data_SHADE
+ 0063 5300              mov [_Port_0_Data_SHADE],A
+ 0065                   .dbline 35
+ 0065           ;               CLK_DataShadow |= (((WORD *)&col)[0] & i) ? S_colA_MASK : 0;
+ 0065 62D000            mov REG[0xd0],>__r0
+ 0068 52F8              mov A,[X-8]
+ 006A 2301              and A,[X+1]
+ 006C 5300              mov [__r1],A
+ 006E 52F7              mov A,[X-9]
+ 0070 2300              and A,[X+0]
+ 0072 3900              cmp A,0
+ 0074 B006              jnz X1
+ 0076 3C0000            cmp [__r1],0
+ 0079 A009              jz L16
+ 007B           X1:
+ 007B 560502            mov [X+5],2
+ 007E 560400            mov [X+4],0
+ 0081 8007              xjmp L17
+ 0083           L16:
+ 0083 560500            mov [X+5],0
+ 0086 560400            mov [X+4],0
+ 0089           L17:
+ 0089 62D000            mov REG[0xd0],>_Port_0_Data_SHADE
+ 008C 5100              mov A,[_Port_0_Data_SHADE]
+ 008E 62D000            mov REG[0xd0],>__r0
+ 0091 5300              mov [__r1],A
+ 0093 5205              mov A,[X+5]
+ 0095 2C00              or [__r1],A
+ 0097 5100              mov A,[__r1]
+ 0099 62D000            mov REG[0xd0],>_Port_0_Data_SHADE
+ 009C 5300              mov [_Port_0_Data_SHADE],A
+ 009E                   .dbline 36
+ 009E           ;               CLK_DataShadow |= (((WORD *)&col)[1] & i) ? S_colB_MASK : 0;
+ 009E 62D000            mov REG[0xd0],>__r0
+ 00A1 52FA              mov A,[X-6]
+ 00A3 2301              and A,[X+1]
+ 00A5 5300              mov [__r1],A
+ 00A7 52F9              mov A,[X-7]
+ 00A9 2300              and A,[X+0]
+ 00AB 3900              cmp A,0
+ 00AD B006              jnz X2
+ 00AF 3C0000            cmp [__r1],0
+ 00B2 A009              jz L20
+ 00B4           X2:
+ 00B4 560704            mov [X+7],4
+ 00B7 560600            mov [X+6],0
+ 00BA 8007              xjmp L21
+ 00BC           L20:
+ 00BC 560700            mov [X+7],0
+ 00BF 560600            mov [X+6],0
+ 00C2           L21:
+ 00C2 62D000            mov REG[0xd0],>_Port_0_Data_SHADE
+ 00C5 5100              mov A,[_Port_0_Data_SHADE]
+ 00C7 62D000            mov REG[0xd0],>__r0
+ 00CA 5300              mov [__r1],A
+ 00CC 5207              mov A,[X+7]
+ 00CE 2C00              or [__r1],A
+ 00D0 5100              mov A,[__r1]
+ 00D2 62D000            mov REG[0xd0],>_Port_0_Data_SHADE
+ 00D5 5300              mov [_Port_0_Data_SHADE],A
+ 00D7                   .dbline 37
+ 00D7           ;               CLK_Data_ADDR = CLK_DataShadow;
+ 00D7 5100              mov A,[_Port_0_Data_SHADE]
+ 00D9 6000              mov REG[0],A
+ 00DB                   .dbline 39
+ 00DB           ;               
+ 00DB           ;               CLK_DataShadow |= CLK_MASK;
+ 00DB 2E0008            or [_Port_0_Data_SHADE],8
+ 00DE                   .dbline 40
+ 00DE           ;               CLK_Data_ADDR = CLK_DataShadow;
+ 00DE 5100              mov A,[_Port_0_Data_SHADE]
+ 00E0 6000              mov REG[0],A
+ 00E2                   .dbline 41
+ 00E2           ;       }
+ 00E2           L9:
+ 00E2                   .dbline 29
+ 00E2 6601              asl [X+1]
+ 00E4 6C00              rlc [X+0]
+ 00E6           L11:
+ 00E6                   .dbline 29
+ 00E6 3D0000            cmp [X+0],0
+ 00E9 BF38              jnz L8
+ 00EB 3D0100            cmp [X+1],0
+ 00EE BF33              jnz L8
+ 00F0           X3:
+ 00F0                   .dbline 43
+ 00F0           ;       
+ 00F0           ;       LATCH_DataShadow |= LATCH_MASK;
+ 00F0 62D000            mov REG[0xd0],>_Port_0_Data_SHADE
+ 00F3 2E0010            or [_Port_0_Data_SHADE],16
+ 00F6                   .dbline 44
+ 00F6           ;       LATCH_Data_ADDR = LATCH_DataShadow;
+ 00F6 5100              mov A,[_Port_0_Data_SHADE]
+ 00F8 6000              mov REG[0],A
+ 00FA                   .dbline -2
+ 00FA           L7:
+ 00FA 38F8              add SP,-8
+ 00FC 20                pop X
+ 00FD                   .dbline 0 ; func end
+ 00FD 7F                ret
+ 00FE                   .dbsym l i 0 i
+ 00FE                   .dbsym l col -9 l
+ 00FE                   .dbsym l row -5 i
+ 00FE                   .dbend
+ 00FE                   .dbfunc e Matrix_pDrawVector _Matrix_pDrawVector fV
+ 00FE           ;              i -> X+0
+ 00FE           ;            col -> X-7
+ 00FE           ;            row -> X-5
+ 00FE           _Matrix_pDrawVector::
+ 00FE                   .dbline -1
+ 00FE 10                push X
+ 00FF 4F                mov X,SP
+ 0100 3808              add SP,8
+ 0102                   .dbline 49
+ 0102           ; }
+ 0102           ; 
+ 0102           ; // Draw Vector data : WORD, DWORD *
+ 0102           ; void Matrix_pDrawVector(WORD row, CONST DWORD *col)
+ 0102           ; {
+ 0102                   .dbline 51
+ 0102           ;       WORD i;
+ 0102           ;       for (i = 1; i != 0; i <<= 1)
+ 0102 560101            mov [X+1],1
+ 0105 560000            mov [X+0],0
+ 0108 80E1              xjmp L26
+ 010A           L23:
+ 010A                   .dbline 52
+ 010A           ;       {
+ 010A                   .dbline 53
+ 010A           ;               CLK_DataShadow &= ~Matrix_MASK;
+ 010A 62D000            mov REG[0xd0],>_Port_0_Data_SHADE
+ 010D 2600E0            and [_Port_0_Data_SHADE],-32
+ 0110                   .dbline 54
+ 0110           ;               CLK_Data_ADDR = CLK_DataShadow;
+ 0110 5100              mov A,[_Port_0_Data_SHADE]
+ 0112 6000              mov REG[0],A
+ 0114                   .dbline 56
+ 0114           ;               
+ 0114           ;               CLK_DataShadow |= (row & i) ? S_row_MASK : 0;
+ 0114 62D000            mov REG[0xd0],>__r0
+ 0117 52FC              mov A,[X-4]
+ 0119 2301              and A,[X+1]
+ 011B 5300              mov [__r1],A
+ 011D 52FB              mov A,[X-5]
+ 011F 2300              and A,[X+0]
+ 0121 3900              cmp A,0
+ 0123 B006              jnz X4
+ 0125 3C0000            cmp [__r1],0
+ 0128 A009              jz L28
+ 012A           X4:
+ 012A 560301            mov [X+3],1
+ 012D 560200            mov [X+2],0
+ 0130 8007              xjmp L29
+ 0132           L28:
+ 0132 560300            mov [X+3],0
+ 0135 560200            mov [X+2],0
+ 0138           L29:
+ 0138 62D000            mov REG[0xd0],>_Port_0_Data_SHADE
+ 013B 5100              mov A,[_Port_0_Data_SHADE]
+ 013D 62D000            mov REG[0xd0],>__r0
+ 0140 5300              mov [__r1],A
+ 0142 5203              mov A,[X+3]
+ 0144 2C00              or [__r1],A
+ 0146 5100              mov A,[__r1]
+ 0148 62D000            mov REG[0xd0],>_Port_0_Data_SHADE
+ 014B 5300              mov [_Port_0_Data_SHADE],A
+ 014D                   .dbline 57
+ 014D           ;               CLK_DataShadow |= (((WORD *)col)[0] & i) ? S_colA_MASK : 0;
+ 014D 62D000            mov REG[0xd0],>__r0
+ 0150 52FA              mov A,[X-6]
+ 0152 5300              mov [__r1],A
+ 0154 52F9              mov A,[X-7]
+ 0156 60D4              mov REG[0xd4],A
+ 0158 3E00              mvi A,[__r1]
+ 015A 5300              mov [__r0],A
+ 015C 3E00              mvi A,[__r1]
+ 015E 5300              mov [__r1],A
+ 0160 5201              mov A,[X+1]
+ 0162 2400              and [__r1],A
+ 0164 5200              mov A,[X+0]
+ 0166 2400              and [__r0],A
+ 0168 B006              jnz X5
+ 016A 3C0000            cmp [__r1],0
+ 016D A009              jz L31
+ 016F           X5:
+ 016F 560502            mov [X+5],2
+ 0172 560400            mov [X+4],0
+ 0175 8007              xjmp L32
+ 0177           L31:
+ 0177 560500            mov [X+5],0
+ 017A 560400            mov [X+4],0
+ 017D           L32:
+ 017D 62D000            mov REG[0xd0],>_Port_0_Data_SHADE
+ 0180 5100              mov A,[_Port_0_Data_SHADE]
+ 0182 62D000            mov REG[0xd0],>__r0
+ 0185 5300              mov [__r1],A
+ 0187 5205              mov A,[X+5]
+ 0189 2C00              or [__r1],A
+ 018B 5100              mov A,[__r1]
+ 018D 62D000            mov REG[0xd0],>_Port_0_Data_SHADE
+ 0190 5300              mov [_Port_0_Data_SHADE],A
+ 0192                   .dbline 58
+ 0192           ;               CLK_DataShadow |= (((WORD *)col)[1] & i) ? S_colB_MASK : 0;
+ 0192 62D000            mov REG[0xd0],>__r0
+ 0195 52FA              mov A,[X-6]
+ 0197 0102              add A,2
+ 0199 5300              mov [__r1],A
+ 019B 52F9              mov A,[X-7]
+ 019D 0900              adc A,0
+ 019F 60D4              mov REG[0xd4],A
+ 01A1 3E00              mvi A,[__r1]
+ 01A3 5300              mov [__r0],A
+ 01A5 3E00              mvi A,[__r1]
+ 01A7 5300              mov [__r1],A
+ 01A9 5201              mov A,[X+1]
+ 01AB 2400              and [__r1],A
+ 01AD 5200              mov A,[X+0]
+ 01AF 2400              and [__r0],A
+ 01B1 B006              jnz X6
+ 01B3 3C0000            cmp [__r1],0
+ 01B6 A009              jz L34
+ 01B8           X6:
+ 01B8 560704            mov [X+7],4
+ 01BB 560600            mov [X+6],0
+ 01BE 8007              xjmp L35
+ 01C0           L34:
+ 01C0 560700            mov [X+7],0
+ 01C3 560600            mov [X+6],0
+ 01C6           L35:
+ 01C6 62D000            mov REG[0xd0],>_Port_0_Data_SHADE
+ 01C9 5100              mov A,[_Port_0_Data_SHADE]
+ 01CB 62D000            mov REG[0xd0],>__r0
+ 01CE 5300              mov [__r1],A
+ 01D0 5207              mov A,[X+7]
+ 01D2 2C00              or [__r1],A
+ 01D4 5100              mov A,[__r1]
+ 01D6 62D000            mov REG[0xd0],>_Port_0_Data_SHADE
+ 01D9 5300              mov [_Port_0_Data_SHADE],A
+ 01DB                   .dbline 59
+ 01DB           ;               CLK_Data_ADDR = CLK_DataShadow;
+ 01DB 5100              mov A,[_Port_0_Data_SHADE]
+ 01DD 6000              mov REG[0],A
+ 01DF                   .dbline 61
+ 01DF           ;               
+ 01DF           ;               CLK_DataShadow |= CLK_MASK;
+ 01DF 2E0008            or [_Port_0_Data_SHADE],8
+ 01E2                   .dbline 62
+ 01E2           ;               CLK_Data_ADDR = CLK_DataShadow;
+ 01E2 5100              mov A,[_Port_0_Data_SHADE]
+ 01E4 6000              mov REG[0],A
+ 01E6                   .dbline 63
+ 01E6           ;       }
+ 01E6           L24:
+ 01E6                   .dbline 51
+ 01E6 6601              asl [X+1]
+ 01E8 6C00              rlc [X+0]
+ 01EA           L26:
+ 01EA                   .dbline 51
+ 01EA 3D0000            cmp [X+0],0
+ 01ED BF1C              jnz L23
+ 01EF 3D0100            cmp [X+1],0
+ 01F2 BF17              jnz L23
+ 01F4           X7:
+ 01F4                   .dbline 65
+ 01F4           ;       
+ 01F4           ;       LATCH_DataShadow |= LATCH_MASK;
+ 01F4 62D000            mov REG[0xd0],>_Port_0_Data_SHADE
+ 01F7 2E0010            or [_Port_0_Data_SHADE],16
+ 01FA                   .dbline 66
+ 01FA           ;       LATCH_Data_ADDR = LATCH_DataShadow;
+ 01FA 5100              mov A,[_Port_0_Data_SHADE]
+ 01FC 6000              mov REG[0],A
+ 01FE                   .dbline -2
+ 01FE           L22:
+ 01FE 38F8              add SP,-8
+ 0200 20                pop X
+ 0201                   .dbline 0 ; func end
+ 0201 7F                ret
+ 0202                   .dbsym l i 0 i
+ 0202                   .dbsym l col -7 pl
+ 0202                   .dbsym l row -5 i
+ 0202                   .dbend
+ 0202                   .dbfunc e Matrix_ppDrawVector _Matrix_ppDrawVector fV
+ 0202           ;              i -> X+0
+ 0202           ;            col -> X-7
+ 0202           ;            row -> X-5
+ 0202           _Matrix_ppDrawVector::
+ 0202                   .dbline -1
+ 0202 10                push X
+ 0203 4F                mov X,SP
+ 0204 3808              add SP,8
+ 0206                   .dbline 71
+ 0206           ; }
+ 0206           ; 
+ 0206           ; // Draw Vector data : WORD *, DWORD *
+ 0206           ; void Matrix_ppDrawVector(CONST WORD *row, CONST DWORD *col)
+ 0206           ; {
+ 0206                   .dbline 73
+ 0206           ;       WORD i;
+ 0206           ;       for (i = 1; i != 0; i <<= 1)
+ 0206 560101            mov [X+1],1
+ 0209 560000            mov [X+0],0
+ 020C 80ED              xjmp L40
+ 020E           L37:
+ 020E                   .dbline 74
+ 020E           ;       {
+ 020E                   .dbline 75
+ 020E           ;               CLK_DataShadow &= ~Matrix_MASK;
+ 020E 62D000            mov REG[0xd0],>_Port_0_Data_SHADE
+ 0211 2600E0            and [_Port_0_Data_SHADE],-32
+ 0214                   .dbline 76
+ 0214           ;               CLK_Data_ADDR = CLK_DataShadow;
+ 0214 5100              mov A,[_Port_0_Data_SHADE]
+ 0216 6000              mov REG[0],A
+ 0218                   .dbline 78
+ 0218           ;               
+ 0218           ;               CLK_DataShadow |= (*row & i) ? S_row_MASK : 0;
+ 0218 62D000            mov REG[0xd0],>__r0
+ 021B 52FC              mov A,[X-4]
+ 021D 5300              mov [__r1],A
+ 021F 52FB              mov A,[X-5]
+ 0221 60D4              mov REG[0xd4],A
+ 0223 3E00              mvi A,[__r1]
+ 0225 5300              mov [__r0],A
+ 0227 3E00              mvi A,[__r1]
+ 0229 5300              mov [__r1],A
+ 022B 5201              mov A,[X+1]
+ 022D 2400              and [__r1],A
+ 022F 5200              mov A,[X+0]
+ 0231 2400              and [__r0],A
+ 0233 B006              jnz X8
+ 0235 3C0000            cmp [__r1],0
+ 0238 A009              jz L42
+ 023A           X8:
+ 023A 560301            mov [X+3],1
+ 023D 560200            mov [X+2],0
+ 0240 8007              xjmp L43
+ 0242           L42:
+ 0242 560300            mov [X+3],0
+ 0245 560200            mov [X+2],0
+ 0248           L43:
+ 0248 62D000            mov REG[0xd0],>_Port_0_Data_SHADE
+ 024B 5100              mov A,[_Port_0_Data_SHADE]
+ 024D 62D000            mov REG[0xd0],>__r0
+ 0250 5300              mov [__r1],A
+ 0252 5203              mov A,[X+3]
+ 0254 2C00              or [__r1],A
+ 0256 5100              mov A,[__r1]
+ 0258 62D000            mov REG[0xd0],>_Port_0_Data_SHADE
+ 025B 5300              mov [_Port_0_Data_SHADE],A
+ 025D                   .dbline 79
+ 025D           ;               CLK_DataShadow |= (((WORD *)col)[0] & i) ? S_colA_MASK : 0;
+ 025D 62D000            mov REG[0xd0],>__r0
+ 0260 52FA              mov A,[X-6]
+ 0262 5300              mov [__r1],A
+ 0264 52F9              mov A,[X-7]
+ 0266 60D4              mov REG[0xd4],A
+ 0268 3E00              mvi A,[__r1]
+ 026A 5300              mov [__r0],A
+ 026C 3E00              mvi A,[__r1]
+ 026E 5300              mov [__r1],A
+ 0270 5201              mov A,[X+1]
+ 0272 2400              and [__r1],A
+ 0274 5200              mov A,[X+0]
+ 0276 2400              and [__r0],A
+ 0278 B006              jnz X9
+ 027A 3C0000            cmp [__r1],0
+ 027D A009              jz L45
+ 027F           X9:
+ 027F 560502            mov [X+5],2
+ 0282 560400            mov [X+4],0
+ 0285 8007              xjmp L46
+ 0287           L45:
+ 0287 560500            mov [X+5],0
+ 028A 560400            mov [X+4],0
+ 028D           L46:
+ 028D 62D000            mov REG[0xd0],>_Port_0_Data_SHADE
+ 0290 5100              mov A,[_Port_0_Data_SHADE]
+ 0292 62D000            mov REG[0xd0],>__r0
+ 0295 5300              mov [__r1],A
+ 0297 5205              mov A,[X+5]
+ 0299 2C00              or [__r1],A
+ 029B 5100              mov A,[__r1]
+ 029D 62D000            mov REG[0xd0],>_Port_0_Data_SHADE
+ 02A0 5300              mov [_Port_0_Data_SHADE],A
+ 02A2                   .dbline 80
+ 02A2           ;               CLK_DataShadow |= (((WORD *)col)[1] & i) ? S_colB_MASK : 0;
+ 02A2 62D000            mov REG[0xd0],>__r0
+ 02A5 52FA              mov A,[X-6]
+ 02A7 0102              add A,2
+ 02A9 5300              mov [__r1],A
+ 02AB 52F9              mov A,[X-7]
+ 02AD 0900              adc A,0
+ 02AF 60D4              mov REG[0xd4],A
+ 02B1 3E00              mvi A,[__r1]
+ 02B3 5300              mov [__r0],A
+ 02B5 3E00              mvi A,[__r1]
+ 02B7 5300              mov [__r1],A
+ 02B9 5201              mov A,[X+1]
+ 02BB 2400              and [__r1],A
+ 02BD 5200              mov A,[X+0]
+ 02BF 2400              and [__r0],A
+ 02C1 B006              jnz X10
+ 02C3 3C0000            cmp [__r1],0
+ 02C6 A009              jz L48
+ 02C8           X10:
+ 02C8 560704            mov [X+7],4
+ 02CB 560600            mov [X+6],0
+ 02CE 8007              xjmp L49
+ 02D0           L48:
+ 02D0 560700            mov [X+7],0
+ 02D3 560600            mov [X+6],0
+ 02D6           L49:
+ 02D6 62D000            mov REG[0xd0],>_Port_0_Data_SHADE
+ 02D9 5100              mov A,[_Port_0_Data_SHADE]
+ 02DB 62D000            mov REG[0xd0],>__r0
+ 02DE 5300              mov [__r1],A
+ 02E0 5207              mov A,[X+7]
+ 02E2 2C00              or [__r1],A
+ 02E4 5100              mov A,[__r1]
+ 02E6 62D000            mov REG[0xd0],>_Port_0_Data_SHADE
+ 02E9 5300              mov [_Port_0_Data_SHADE],A
+ 02EB                   .dbline 81
+ 02EB           ;               CLK_Data_ADDR = CLK_DataShadow;
+ 02EB 5100              mov A,[_Port_0_Data_SHADE]
+ 02ED 6000              mov REG[0],A
+ 02EF                   .dbline 83
+ 02EF           ;               
+ 02EF           ;               CLK_DataShadow |= CLK_MASK;
+ 02EF 2E0008            or [_Port_0_Data_SHADE],8
+ 02F2                   .dbline 84
+ 02F2           ;               CLK_Data_ADDR = CLK_DataShadow;
+ 02F2 5100              mov A,[_Port_0_Data_SHADE]
+ 02F4 6000              mov REG[0],A
+ 02F6                   .dbline 85
+ 02F6           ;       }
+ 02F6           L38:
+ 02F6                   .dbline 73
+ 02F6 6601              asl [X+1]
+ 02F8 6C00              rlc [X+0]
+ 02FA           L40:
+ 02FA                   .dbline 73
+ 02FA 3D0000            cmp [X+0],0
+ 02FD BF10              jnz L37
+ 02FF 3D0100            cmp [X+1],0
+ 0302 BF0B              jnz L37
+ 0304           X11:
+ 0304                   .dbline 87
+ 0304           ;       
+ 0304           ;       LATCH_DataShadow |= LATCH_MASK;
+ 0304 62D000            mov REG[0xd0],>_Port_0_Data_SHADE
+ 0307 2E0010            or [_Port_0_Data_SHADE],16
+ 030A                   .dbline 88
+ 030A           ;       LATCH_Data_ADDR = LATCH_DataShadow;
+ 030A 5100              mov A,[_Port_0_Data_SHADE]
+ 030C 6000              mov REG[0],A
+ 030E                   .dbline -2
+ 030E           L36:
+ 030E 38F8              add SP,-8
+ 0310 20                pop X
+ 0311                   .dbline 0 ; func end
+ 0311 7F                ret
+ 0312                   .dbsym l i 0 i
+ 0312                   .dbsym l col -7 pl
+ 0312                   .dbsym l row -5 pi
+ 0312                   .dbend
+ 0312                   .dbfunc e Matrix_DrawVector2 _Matrix_DrawVector2 fV
+ 0312                   .dbstruct 0 6 .1
+ 0312                   .dbfield 0 row i
+ 0312                   .dbfield 2 col l
+ 0312                   .dbend
+ 0312           ;              i -> X+0
+ 0312           ;           data -> X-5
+ 0312           _Matrix_DrawVector2::
+ 0312                   .dbline -1
+ 0312 10                push X
+ 0313 4F                mov X,SP
+ 0314 3808              add SP,8
+ 0316                   .dbline 93
+ 0316           ; }
+ 0316           ; 
+ 0316           ; // Draw Vector data : Vector *
+ 0316           ; void Matrix_DrawVector2(CONST Vector *data)
+ 0316           ; {
+ 0316                   .dbline 95
+ 0316           ;       WORD i;
+ 0316           ;       for (i = 1; i != 0; i <<= 1)
+ 0316 560101            mov [X+1],1
+ 0319 560000            mov [X+0],0
+ 031C 80F1              xjmp L54
+ 031E           L51:
+ 031E                   .dbline 96
+ 031E           ;       {
+ 031E                   .dbline 97
+ 031E           ;               CLK_DataShadow &= ~Matrix_MASK;
+ 031E 62D000            mov REG[0xd0],>_Port_0_Data_SHADE
+ 0321 2600E0            and [_Port_0_Data_SHADE],-32
+ 0324                   .dbline 98
+ 0324           ;               CLK_Data_ADDR = CLK_DataShadow;
+ 0324 5100              mov A,[_Port_0_Data_SHADE]
+ 0326 6000              mov REG[0],A
+ 0328                   .dbline 100
+ 0328           ;               
+ 0328           ;               CLK_DataShadow |= (data->row & i) ? S_row_MASK : 0;
+ 0328 62D000            mov REG[0xd0],>__r0
+ 032B 52FC              mov A,[X-4]
+ 032D 5300              mov [__r1],A
+ 032F 52FB              mov A,[X-5]
+ 0331 60D4              mov REG[0xd4],A
+ 0333 3E00              mvi A,[__r1]
+ 0335 5300              mov [__r0],A
+ 0337 3E00              mvi A,[__r1]
+ 0339 5300              mov [__r1],A
+ 033B 5201              mov A,[X+1]
+ 033D 2400              and [__r1],A
+ 033F 5200              mov A,[X+0]
+ 0341 2400              and [__r0],A
+ 0343 B006              jnz X12
+ 0345 3C0000            cmp [__r1],0
+ 0348 A009              jz L56
+ 034A           X12:
+ 034A 560301            mov [X+3],1
+ 034D 560200            mov [X+2],0
+ 0350 8007              xjmp L57
+ 0352           L56:
+ 0352 560300            mov [X+3],0
+ 0355 560200            mov [X+2],0
+ 0358           L57:
+ 0358 62D000            mov REG[0xd0],>_Port_0_Data_SHADE
+ 035B 5100              mov A,[_Port_0_Data_SHADE]
+ 035D 62D000            mov REG[0xd0],>__r0
+ 0360 5300              mov [__r1],A
+ 0362 5203              mov A,[X+3]
+ 0364 2C00              or [__r1],A
+ 0366 5100              mov A,[__r1]
+ 0368 62D000            mov REG[0xd0],>_Port_0_Data_SHADE
+ 036B 5300              mov [_Port_0_Data_SHADE],A
+ 036D                   .dbline 101
+ 036D           ;               CLK_DataShadow |= (((WORD *)&(data->col))[0] & i) ? S_colA_MASK : 0;
+ 036D 62D000            mov REG[0xd0],>__r0
+ 0370 52FC              mov A,[X-4]
+ 0372 0102              add A,2
+ 0374 5300              mov [__r1],A
+ 0376 52FB              mov A,[X-5]
+ 0378 0900              adc A,0
+ 037A 60D4              mov REG[0xd4],A
+ 037C 3E00              mvi A,[__r1]
+ 037E 5300              mov [__r0],A
+ 0380 3E00              mvi A,[__r1]
+ 0382 5300              mov [__r1],A
+ 0384 5201              mov A,[X+1]
+ 0386 2400              and [__r1],A
+ 0388 5200              mov A,[X+0]
+ 038A 2400              and [__r0],A
+ 038C B006              jnz X13
+ 038E 3C0000            cmp [__r1],0
+ 0391 A009              jz L59
+ 0393           X13:
+ 0393 560502            mov [X+5],2
+ 0396 560400            mov [X+4],0
+ 0399 8007              xjmp L60
+ 039B           L59:
+ 039B 560500            mov [X+5],0
+ 039E 560400            mov [X+4],0
+ 03A1           L60:
+ 03A1 62D000            mov REG[0xd0],>_Port_0_Data_SHADE
+ 03A4 5100              mov A,[_Port_0_Data_SHADE]
+ 03A6 62D000            mov REG[0xd0],>__r0
+ 03A9 5300              mov [__r1],A
+ 03AB 5205              mov A,[X+5]
+ 03AD 2C00              or [__r1],A
+ 03AF 5100              mov A,[__r1]
+ 03B1 62D000            mov REG[0xd0],>_Port_0_Data_SHADE
+ 03B4 5300              mov [_Port_0_Data_SHADE],A
+ 03B6                   .dbline 102
+ 03B6           ;               CLK_DataShadow |= (((WORD *)&(data->col))[1] & i) ? S_colB_MASK : 0;
+ 03B6 62D000            mov REG[0xd0],>__r0
+ 03B9 52FC              mov A,[X-4]
+ 03BB 0104              add A,4
+ 03BD 5300              mov [__r1],A
+ 03BF 52FB              mov A,[X-5]
+ 03C1 0900              adc A,0
+ 03C3 60D4              mov REG[0xd4],A
+ 03C5 3E00              mvi A,[__r1]
+ 03C7 5300              mov [__r0],A
+ 03C9 3E00              mvi A,[__r1]
+ 03CB 5300              mov [__r1],A
+ 03CD 5201              mov A,[X+1]
+ 03CF 2400              and [__r1],A
+ 03D1 5200              mov A,[X+0]
+ 03D3 2400              and [__r0],A
+ 03D5 B006              jnz X14
+ 03D7 3C0000            cmp [__r1],0
+ 03DA A009              jz L62
+ 03DC           X14:
+ 03DC 560704            mov [X+7],4
+ 03DF 560600            mov [X+6],0
+ 03E2 8007              xjmp L63
+ 03E4           L62:
+ 03E4 560700            mov [X+7],0
+ 03E7 560600            mov [X+6],0
+ 03EA           L63:
+ 03EA 62D000            mov REG[0xd0],>_Port_0_Data_SHADE
+ 03ED 5100              mov A,[_Port_0_Data_SHADE]
+ 03EF 62D000            mov REG[0xd0],>__r0
+ 03F2 5300              mov [__r1],A
+ 03F4 5207              mov A,[X+7]
+ 03F6 2C00              or [__r1],A
+ 03F8 5100              mov A,[__r1]
+ 03FA 62D000            mov REG[0xd0],>_Port_0_Data_SHADE
+ 03FD 5300              mov [_Port_0_Data_SHADE],A
+ 03FF                   .dbline 103
+ 03FF           ;               CLK_Data_ADDR = CLK_DataShadow;
+ 03FF 5100              mov A,[_Port_0_Data_SHADE]
+ 0401 6000              mov REG[0],A
+ 0403                   .dbline 105
+ 0403           ;               
+ 0403           ;               CLK_DataShadow |= CLK_MASK;
+ 0403 2E0008            or [_Port_0_Data_SHADE],8
+ 0406                   .dbline 106
+ 0406           ;               CLK_Data_ADDR = CLK_DataShadow;
+ 0406 5100              mov A,[_Port_0_Data_SHADE]
+ 0408 6000              mov REG[0],A
+ 040A                   .dbline 107
+ 040A           ;       }
+ 040A           L52:
+ 040A                   .dbline 95
+ 040A 6601              asl [X+1]
+ 040C 6C00              rlc [X+0]
+ 040E           L54:
+ 040E                   .dbline 95
+ 040E 3D0000            cmp [X+0],0
+ 0411 BF0C              jnz L51
+ 0413 3D0100            cmp [X+1],0
+ 0416 BF07              jnz L51
+ 0418           X15:
+ 0418                   .dbline 109
+ 0418           ;       
+ 0418           ;       LATCH_DataShadow |= LATCH_MASK;
+ 0418 62D000            mov REG[0xd0],>_Port_0_Data_SHADE
+ 041B 2E0010            or [_Port_0_Data_SHADE],16
+ 041E                   .dbline 110
+ 041E           ;       LATCH_Data_ADDR = LATCH_DataShadow;
+ 041E 5100              mov A,[_Port_0_Data_SHADE]
+ 0420 6000              mov REG[0],A
+ 0422                   .dbline -2
+ 0422           L50:
+ 0422 38F8              add SP,-8
+ 0424 20                pop X
+ 0425                   .dbline 0 ; func end
+ 0425 7F                ret
+ 0426                   .dbsym l i 0 i
+ 0426                   .dbsym l data -5 pS[.1]
+ 0426                   .dbend
+ 0426                   .dbfunc e Matrix_DrawRaster _Matrix_DrawRaster fV
+ 0426                   .dbstruct 0 64 .2
+ 0426                   .dbfield 0 data A[64:16]l
+ 0426                   .dbend
+ 0426           ;           data -> X-5
+ 0426           _Matrix_DrawRaster::
+ 0426                   .dbline -1
+ 0426 10                push X
+ 0427 4F                mov X,SP
+ 0428                   .dbline 119
+ 0428           ; }
+ 0428           ; 
+ 0428           ; 
+ 0428           ; 
+ 0428           ; Raster *timer;
+ 0428           ; 
+ 0428           ; // raster data 表示
+ 0428           ; void Matrix_DrawRaster(Raster *data)
+ 0428           ; {
+ 0428                   .dbline 120
+ 0428           ;       timer = data;
+ 0428 62D000            mov REG[0xd0],>_timer
+ 042B 52FC              mov A,[X-4]
+ 042D 5301              mov [_timer+1],A
+ 042F 52FB              mov A,[X-5]
+ 0431 5300              mov [_timer],A
+ 0433                   .dbline 121
+ 0433           ;       Timer8_1_EnableInt();
+ 0433 10                push X
+ 0434 7C0000            xcall _Timer8_1_EnableInt
+ 0437 20                pop X
+ 0438                   .dbline -2
+ 0438           L64:
+ 0438 20                pop X
+ 0439                   .dbline 0 ; func end
+ 0439 7F                ret
+ 043A                   .dbsym l data -5 pS[.2]
+ 043A                   .dbend
+ 043A                   .dbfunc e Matrix_UnSetRaster _Matrix_UnSetRaster fV
+ 043A           _Matrix_UnSetRaster::
+ 043A                   .dbline -1
+ 043A                   .dbline 126
+ 043A           ; }
+ 043A           ; 
+ 043A           ; // raster data 表示用 timer 停止
+ 043A           ; void Matrix_UnSetRaster(void)
+ 043A           ; {
+ 043A                   .dbline 127
+ 043A           ;       timer = 0;
+ 043A 62D000            mov REG[0xd0],>_timer
+ 043D 550100            mov [_timer+1],0
+ 0440 550000            mov [_timer],0
+ 0443                   .dbline 128
+ 0443           ;       Timer8_1_DisableInt();
+ 0443 10                push X
+ 0444 7C0000            xcall _Timer8_1_DisableInt
+ 0447 20                pop X
+ 0448                   .dbline -2
+ 0448           L65:
+ 0448                   .dbline 0 ; func end
+ 0448 7F                ret
+ 0449                   .dbend
+                        .area data(ram, con, rel)
+ 0000                   .dbfile C:\Users\hikari\DOCUME~1\PSOCDE~1.4PR\MATRIX~2\MATRIX~1\MATRIX~1\matrix_led.c
+ 0000           L67:
+ 0000 00                .byte 0
+                        .area text(rom, con, rel)
+ 0449                   .dbfile C:\Users\hikari\DOCUME~1\PSOCDE~1.4PR\MATRIX~2\MATRIX~1\MATRIX~1\matrix_led.c
+ 0449                   .dbfunc e _Timer8_1_ISR __Timer8_1_ISR fV
+ 0449                   .dbsym s i L67 c
+ 0449           __Timer8_1_ISR::
+ 0449                   .dbline -1
+ 0449 71C0              or F,-64
+ 044B 08                push A
+ 044C 5DD0              mov A,REG[0xd0]
+ 044E 08                push A
+ 044F 5DD3              mov A,REG[0xd3]
+ 0451 08                push A
+ 0452 5DD4              mov A,REG[0xd4]
+ 0454 08                push A
+ 0455 5DD5              mov A,REG[0xd5]
+ 0457 08                push A
+ 0458 62D000            mov REG[0xd0],>__r0
+ 045B 5100              mov A,[__r0]
+ 045D 08                push A
+ 045E 5100              mov A,[__r1]
+ 0460 08                push A
+ 0461 5100              mov A,[__r2]
+ 0463 08                push A
+ 0464 5100              mov A,[__r3]
+ 0466 08                push A
+ 0467 5100              mov A,[__r4]
+ 0469 08                push A
+ 046A 5100              mov A,[__r5]
+ 046C 08                push A
+ 046D 5100              mov A,[__r6]
+ 046F 08                push A
+ 0470 5100              mov A,[__r7]
+ 0472 08                push A
+ 0473 5100              mov A,[__r8]
+ 0475 08                push A
+ 0476 5100              mov A,[__r9]
+ 0478 08                push A
+ 0479 5100              mov A,[__r10]
+ 047B 08                push A
+ 047C 5100              mov A,[__r11]
+ 047E 08                push A
+ 047F 5100              mov A,[__rX]
+ 0481 08                push A
+ 0482 5100              mov A,[__rY]
+ 0484 08                push A
+ 0485 5100              mov A,[__rZ]
+ 0487 08                push A
+ 0488                   .dbline 136
+ 0488           ; }
+ 0488           ; 
+ 0488           ; 
+ 0488           ; 
+ 0488           ; // raster data 表示用 timer
+ 0488           ; #pragma interrupt_handler _Timer8_1_ISR
+ 0488           ; void _Timer8_1_ISR(void)
+ 0488           ; {
+ 0488                   .dbline 139
+ 0488           ;       static BYTE i = 0;
+ 0488           ;       
+ 0488           ;       if (timer == 0)
+ 0488 62D000            mov REG[0xd0],>_timer
+ 048B 3C0000            cmp [_timer],0
+ 048E B00D              jnz L68
+ 0490 3C0100            cmp [_timer+1],0
+ 0493 B008              jnz L68
+ 0495           X16:
+ 0495                   .dbline 141
+ 0495           ;       {
+ 0495           ;               Timer8_1_DisableInt();
+ 0495                   .dbline 141
+ 0495 10                push X
+ 0496 7C0000            xcall _Timer8_1_DisableInt
+ 0499 20                pop X
+ 049A                   .dbline 142
+ 049A           ;               return;
+ 049A 806F              xjmp L66
+ 049C           L68:
+ 049C                   .dbline 145
+ 049C           ;       }
+ 049C           ; 
+ 049C           ;       Matrix_pDrawVector(1 << i, timer->data + i);
+ 049C 62D000            mov REG[0xd0],>L67
+ 049F 5100              mov A,[L67]
+ 04A1 62D000            mov REG[0xd0],>__r0
+ 04A4 5300              mov [__r1],A
+ 04A6 550000            mov [__r0],0
+ 04A9 6500              asl [__r1]
+ 04AB 6B00              rlc [__r0]
+ 04AD 6500              asl [__r1]
+ 04AF 6B00              rlc [__r0]
+ 04B1 62D000            mov REG[0xd0],>_timer
+ 04B4 5101              mov A,[_timer+1]
+ 04B6 62D000            mov REG[0xd0],>__r0
+ 04B9 0400              add [__r1],A
+ 04BB 62D000            mov REG[0xd0],>_timer
+ 04BE 5100              mov A,[_timer]
+ 04C0 62D000            mov REG[0xd0],>__r0
+ 04C3 0C00              adc [__r0],A
+ 04C5 5100              mov A,[__r0]
+ 04C7 08                push A
+ 04C8 5100              mov A,[__r1]
+ 04CA 08                push A
+ 04CB 62D000            mov REG[0xd0],>L67
+ 04CE 5100              mov A,[L67]
+ 04D0 62D000            mov REG[0xd0],>__r0
+ 04D3 550001            mov [__r3],1
+ 04D6 550000            mov [__r2],0
+ 04D9 210F              and A,15
+ 04DB A00B              jz X17
+ 04DD           X18:
+ 04DD 62D000            mov REG[0xd0],>__r0
+ 04E0 6500              asl [__r3]
+ 04E2 6B00              rlc [__r2]
+ 04E4 78                dec A
+ 04E5 BFF7              jnz X18
+ 04E7           X17:
+ 04E7 62D000            mov REG[0xd0],>__r0
+ 04EA 5100              mov A,[__r2]
+ 04EC 08                push A
+ 04ED 5100              mov A,[__r3]
+ 04EF 08                push A
+ 04F0 9C0C              xcall _Matrix_pDrawVector
+ 04F2 38FC              add SP,-4
+ 04F4                   .dbline 147
+ 04F4           ;       
+ 04F4           ;       if (++i >= 16)
+ 04F4 62D000            mov REG[0xd0],>L67
+ 04F7 5100              mov A,[L67]
+ 04F9 0101              add A,1
+ 04FB 5300              mov [L67],A
+ 04FD 62D000            mov REG[0xd0],>__r0
+ 0500 3910              cmp A,16
+ 0502 C007              jc L70
+ 0504           X19:
+ 0504                   .dbline 148
+ 0504           ;               i = 0;
+ 0504 62D000            mov REG[0xd0],>L67
+ 0507 550000            mov [L67],0
+ 050A           L70:
+ 050A                   .dbline -2
+ 050A           L66:
+ 050A 62D000            mov REG[0xD0],>__r0
+ 050D 18                pop A
+ 050E 5300              mov [__rZ],A
+ 0510 18                pop A
+ 0511 5300              mov [__rY],A
+ 0513 18                pop A
+ 0514 5300              mov [__rX],A
+ 0516 18                pop A
+ 0517 5300              mov [__r11],A
+ 0519 18                pop A
+ 051A 5300              mov [__r10],A
+ 051C 18                pop A
+ 051D 5300              mov [__r9],A
+ 051F 18                pop A
+ 0520 5300              mov [__r8],A
+ 0522 18                pop A
+ 0523 5300              mov [__r7],A
+ 0525 18                pop A
+ 0526 5300              mov [__r6],A
+ 0528 18                pop A
+ 0529 5300              mov [__r5],A
+ 052B 18                pop A
+ 052C 5300              mov [__r4],A
+ 052E 18                pop A
+ 052F 5300              mov [__r3],A
+ 0531 18                pop A
+ 0532 5300              mov [__r2],A
+ 0534 18                pop A
+ 0535 5300              mov [__r1],A
+ 0537 18                pop A
+ 0538 5300              mov [__r0],A
+ 053A 18                pop A
+ 053B 60D5              mov REG[213],A
+ 053D 18                pop A
+ 053E 60D4              mov REG[212],A
+ 0540 18                pop A
+ 0541 60D3              mov REG[211],A
+ 0543 18                pop A
+ 0544 60D0              mov REG[208],A
+ 0546 18                pop A
+ 0547                   .dbline 0 ; func end
+ 0547 7E                reti
+ 0548                   .dbend
+                        .area data(ram, con, rel)
+ 0000                   .dbfile C:\Users\hikari\DOCUME~1\PSOCDE~1.4PR\MATRIX~2\MATRIX~1\MATRIX~1\matrix_led.c
+ 0000           _timer::
+ 0000 0000              .byte 0,0
+ 0002                   .dbsym e timer _timer pS[.2]

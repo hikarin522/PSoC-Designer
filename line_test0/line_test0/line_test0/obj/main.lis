@@ -1,0 +1,763 @@
+ 0000                   cpu LMM
+                        .module main.c
+                        .area text(rom, con, rel)
+ 0000                   .dbfile ./main.c
+ 0000                   .dbfile C:\Users\hikari\DOCUME~1\PSOCDE~1.4PR\LINE_T~1\LINE_T~1\LINE_T~1\main.c
+ 0000                   .dbfunc e main _main fV
+ 0000           ;            add -> X+131
+ 0000           ;             ad -> X+2
+ 0000           ;              i -> X+1
+ 0000           ;              k -> X+0
+ 0000           _main::
+ 0000                   .dbline -1
+ 0000 10                push X
+ 0001 4F                mov X,SP
+ 0002 3885              add SP,-123
+ 0004                   .dbline 10
+ 0004           ; //----------------------------------------------------------------------------
+ 0004           ; // C main line
+ 0004           ; //----------------------------------------------------------------------------
+ 0004           ; 
+ 0004           ; #include <m8c.h>        // part specific constants and macros
+ 0004           ; #include "PSoCAPI.h"    // PSoC API definitions for all User Modules
+ 0004           ; 
+ 0004           ; 
+ 0004           ; void main(void)
+ 0004           ; {
+ 0004                   .dbline 12
+ 0004           ;       BYTE k;
+ 0004           ;       M8C_EnableGInt ; // Uncomment this line to enable Global Interrupts
+ 0004 7101                      or  F, 01h
+ 0006           
+ 0006                   .dbline 15
+ 0006           ;       // Insert your main routine code here.
+ 0006           ;       
+ 0006           ;       LCD_1_Start();
+ 0006 10                push X
+ 0007 7C0000            xcall _LCD_1_Start
+ 000A                   .dbline 16
+ 000A           ;       LCD_1_InitVBG();
+ 000A 7C0000            xcall _LCD_1_InitVBG
+ 000D                   .dbline 24
+ 000D           ;       
+ 000D           ;       //TX8_1_EnableInt();
+ 000D           ;       //TX8_1_Start(TX8_1_PARITY_NONE);
+ 000D           ;       
+ 000D           ;       //SleepTimer_1_Start();
+ 000D           ;       //SleepTimer_1_EnableInt();
+ 000D           ;       
+ 000D           ;       SI_Start();
+ 000D 7C0000            xcall _SI_Start
+ 0010                   .dbline 25
+ 0010           ;       CLK_Start();
+ 0010 7C0000            xcall _CLK_Start
+ 0013                   .dbline 27
+ 0013           ;       
+ 0013           ;       SAR6_1_Start(SAR6_1_HIGHPOWER);
+ 0013 5003              mov A,3
+ 0015 7C0000            xcall _SAR6_1_Start
+ 0018 20                pop X
+ 0019                   .dbline 29
+ 0019           ;       
+ 0019           ;       for (k = 0; k < 11; k++)
+ 0019 560000            mov [X+0],0
+ 001C 801B              xjmp L5
+ 001E           L2:
+ 001E                   .dbline 30
+ 001E           ;               LCD_1_DrawVBG(1, k, 2, k + 6);
+ 001E 62D000            mov REG[0xd0],>__r0
+ 0021 5200              mov A,[X+0]
+ 0023 0106              add A,6
+ 0025 10                push X
+ 0026 08                push A
+ 0027 5002              mov A,2
+ 0029 08                push A
+ 002A 5200              mov A,[X+0]
+ 002C 08                push A
+ 002D 5001              mov A,1
+ 002F 08                push A
+ 0030 7C0000            xcall _LCD_1_DrawVBG
+ 0033 38FC              add SP,-4
+ 0035 20                pop X
+ 0036           L3:
+ 0036                   .dbline 29
+ 0036 7700              inc [X+0]
+ 0038           L5:
+ 0038                   .dbline 29
+ 0038 3D000B            cmp [X+0],11
+ 003B CFE2              jc L2
+ 003D           X1:
+ 003D                   .dbline 31
+ 003D           ;       for (k = 0; k < 11; k++)
+ 003D 560000            mov [X+0],0
+ 0040 801D              xjmp L9
+ 0042           L6:
+ 0042                   .dbline 32
+ 0042           ;               LCD_1_DrawVBG(1, k + 11, 2, k + 6);
+ 0042 62D000            mov REG[0xd0],>__r0
+ 0045 5200              mov A,[X+0]
+ 0047 0106              add A,6
+ 0049 10                push X
+ 004A 08                push A
+ 004B 5002              mov A,2
+ 004D 08                push A
+ 004E 5200              mov A,[X+0]
+ 0050 010B              add A,11
+ 0052 08                push A
+ 0053 5001              mov A,1
+ 0055 08                push A
+ 0056 7C0000            xcall _LCD_1_DrawVBG
+ 0059 38FC              add SP,-4
+ 005B 20                pop X
+ 005C           L7:
+ 005C                   .dbline 31
+ 005C 7700              inc [X+0]
+ 005E           L9:
+ 005E                   .dbline 31
+ 005E 3D000B            cmp [X+0],11
+ 0061 CFE0              jc L6
+ 0063           X2:
+ 0063                   .dbline 33
+ 0063           ;       for (k = 0; k < 11; k++)
+ 0063 560000            mov [X+0],0
+ 0066 801D              xjmp L13
+ 0068           L10:
+ 0068                   .dbline 34
+ 0068           ;               LCD_1_DrawVBG(1, k + 22, 2, k + 6);
+ 0068 62D000            mov REG[0xd0],>__r0
+ 006B 5200              mov A,[X+0]
+ 006D 0106              add A,6
+ 006F 10                push X
+ 0070 08                push A
+ 0071 5002              mov A,2
+ 0073 08                push A
+ 0074 5200              mov A,[X+0]
+ 0076 0116              add A,22
+ 0078 08                push A
+ 0079 5001              mov A,1
+ 007B 08                push A
+ 007C 7C0000            xcall _LCD_1_DrawVBG
+ 007F 38FC              add SP,-4
+ 0081 20                pop X
+ 0082           L11:
+ 0082                   .dbline 33
+ 0082 7700              inc [X+0]
+ 0084           L13:
+ 0084                   .dbline 33
+ 0084 3D000B            cmp [X+0],11
+ 0087 CFE0              jc L10
+ 0089           X3:
+ 0089 83B8              xjmp L15
+ 008B           L14:
+ 008B                   .dbline 37
+ 008B           ;       //*
+ 008B           ;       while (1)
+ 008B           ;       {
+ 008B                   .dbline 40
+ 008B           ;               BYTE i;
+ 008B           ;               CHAR ad[129];
+ 008B           ;               SI_On();
+ 008B 10                push X
+ 008C 7C0000            xcall _SI_On
+ 008F 20                pop X
+ 0090                   .dbline 41
+ 0090           ;               for (i = 0; i < 129; i++)
+ 0090 560100            mov [X+1],0
+ 0093 8061              xjmp L20
+ 0095           L17:
+ 0095                   .dbline 42
+ 0095           ;               {
+ 0095                   .dbline 43
+ 0095           ;                       CLK_On();
+ 0095 10                push X
+ 0096 7C0000            xcall _CLK_On
+ 0099                   .dbline 44
+ 0099           ;                       ad[i] = SAR6_1_cGetSample();
+ 0099 7C0000            xcall _SAR6_1_cGetSample
+ 009C 20                pop X
+ 009D 62D000            mov REG[0xd0],>__r0
+ 00A0 5300              mov [__r0],A
+ 00A2 550007            mov [__r2],7
+ 00A5 5A00              mov [__r3],X
+ 00A7 060002            add [__r3],2
+ 00AA 5201              mov A,[X+1]
+ 00AC 0200              add A,[__r3]
+ 00AE 5300              mov [__r3],A
+ 00B0 5000              mov A,0
+ 00B2 0A00              adc A,[__r2]
+ 00B4 60D5              mov REG[0xd5],A
+ 00B6 5100              mov A,[__r0]
+ 00B8 3F00              mvi [__r3],A
+ 00BA                   .dbline 45
+ 00BA           ;                       CLK_Off();
+ 00BA 10                push X
+ 00BB 7C0000            xcall _CLK_Off
+ 00BE 20                pop X
+ 00BF                   .dbline 46
+ 00BF           ;                       ad[i] += 31;
+ 00BF 62D000            mov REG[0xd0],>__r0
+ 00C2 550007            mov [__r0],7
+ 00C5 5A00              mov [__r1],X
+ 00C7 060002            add [__r1],2
+ 00CA 5201              mov A,[X+1]
+ 00CC 0200              add A,[__r1]
+ 00CE 5300              mov [__r1],A
+ 00D0 5000              mov A,0
+ 00D2 0A00              adc A,[__r0]
+ 00D4 5300              mov [__r0],A
+ 00D6 60D4              mov REG[0xd4],A
+ 00D8 3E00              mvi A,[__r1]
+ 00DA 7A00              dec [__r1]
+ 00DC 5300              mov [__r2],A
+ 00DE 06001F            add [__r2],31
+ 00E1 5100              mov A,[__r0]
+ 00E3 60D5              mov REG[0xd5],A
+ 00E5 5100              mov A,[__r2]
+ 00E7 3F00              mvi [__r1],A
+ 00E9                   .dbline 47
+ 00E9           ;                       if (i == 0)
+ 00E9 3D0100            cmp [X+1],0
+ 00EC B006              jnz L21
+ 00EE                   .dbline 48
+ 00EE           ;                               SI_Off();
+ 00EE 10                push X
+ 00EF 7C0000            xcall _SI_Off
+ 00F2 20                pop X
+ 00F3           L21:
+ 00F3                   .dbline 50
+ 00F3           ;                       
+ 00F3           ;               }
+ 00F3           L18:
+ 00F3                   .dbline 41
+ 00F3 7701              inc [X+1]
+ 00F5           L20:
+ 00F5                   .dbline 41
+ 00F5 3D0181            cmp [X+1],-127
+ 00F8 CF9C              jc L17
+ 00FA           X4:
+ 00FA                   .dbline 52
+ 00FA           ;               
+ 00FA           ;               for (i = 0; i < 8; i++)
+ 00FA 560100            mov [X+1],0
+ 00FD 833F              xjmp L26
+ 00FF           L23:
+ 00FF                   .dbline 53
+ 00FF           ;               {
+ 00FF                   .dbline 54
+ 00FF           ;                       INT add = 0;
+ 00FF 568400            mov [X-124],0
+ 0102 568300            mov [X-125],0
+ 0105                   .dbline 55
+ 0105           ;                       for (k = 0; k < 3; k++)
+ 0105 560000            mov [X+0],0
+ 0108 805A              xjmp L30
+ 010A           L27:
+ 010A                   .dbline 56
+ 010A           ;                               add += ad[(i * 16) + k];
+ 010A 62D000            mov REG[0xd0],>__r0
+ 010D 5200              mov A,[X+0]
+ 010F 5300              mov [__r1],A
+ 0111 550000            mov [__r0],0
+ 0114 5201              mov A,[X+1]
+ 0116 5300              mov [__r3],A
+ 0118 550000            mov [__r2],0
+ 011B 6500              asl [__r3]
+ 011D 6B00              rlc [__r2]
+ 011F 6500              asl [__r3]
+ 0121 6B00              rlc [__r2]
+ 0123 6500              asl [__r3]
+ 0125 6B00              rlc [__r2]
+ 0127 6500              asl [__r3]
+ 0129 6B00              rlc [__r2]
+ 012B 5100              mov A,[__r3]
+ 012D 0200              add A,[__r1]
+ 012F 5300              mov [__r1],A
+ 0131 5100              mov A,[__r2]
+ 0133 0A00              adc A,[__r0]
+ 0135 5300              mov [__r0],A
+ 0137 5A00              mov [__r3],X
+ 0139 060002            add [__r3],2
+ 013C 5100              mov A,[__r3]
+ 013E 0400              add [__r1],A
+ 0140 0E0007            adc [__r0],7
+ 0143 5100              mov A,[__r0]
+ 0145 60D4              mov REG[0xd4],A
+ 0147 3E00              mvi A,[__r1]
+ 0149 5300              mov [__r1],A
+ 014B 550000            mov [__r0],0
+ 014E 470080            tst [__r1],-128
+ 0151 A004              jz X5
+ 0153 5500FF            mov [__r0],-1
+ 0156           X5:
+ 0156 62D000            mov REG[0xd0],>__r0
+ 0159 5100              mov A,[__r1]
+ 015B 0584              add [X-124],A
+ 015D 5100              mov A,[__r0]
+ 015F 0D83              adc [X-125],A
+ 0161           L28:
+ 0161                   .dbline 55
+ 0161 7700              inc [X+0]
+ 0163           L30:
+ 0163                   .dbline 55
+ 0163 3D0003            cmp [X+0],3
+ 0166 CFA3              jc L27
+ 0168           X6:
+ 0168                   .dbline 57
+ 0168           ;                       add /= (3 * 11);
+ 0168 5000              mov A,0
+ 016A 08                push A
+ 016B 5021              mov A,33
+ 016D 08                push A
+ 016E 5283              mov A,[X-125]
+ 0170 08                push A
+ 0171 5284              mov A,[X-124]
+ 0173 08                push A
+ 0174 62D000            mov REG[0xd0],>__r0
+ 0177 7C0000            xcall __divmod_16X16_16
+ 017A 18                pop A
+ 017B 5484              mov [X-124],A
+ 017D 18                pop A
+ 017E 5483              mov [X-125],A
+ 0180 38FE              add SP,-2
+ 0182                   .dbline 58
+ 0182           ;                       LCD_1_DrawVBG(1, i * 5, 2, add + 6);
+ 0182 5284              mov A,[X-124]
+ 0184 0106              add A,6
+ 0186 10                push X
+ 0187 08                push A
+ 0188 5002              mov A,2
+ 018A 08                push A
+ 018B 5201              mov A,[X+1]
+ 018D 60E8              mov REG[0xe8],A
+ 018F 62E905            mov REG[0xe9],5
+ 0192 40                nop
+ 0193 5DEB              mov A,REG[0xeb]
+ 0195 08                push A
+ 0196 5001              mov A,1
+ 0198 08                push A
+ 0199 7C0000            xcall _LCD_1_DrawVBG
+ 019C 38FC              add SP,-4
+ 019E 20                pop X
+ 019F                   .dbline 60
+ 019F           ;                       
+ 019F           ;                       add = 0;
+ 019F 568400            mov [X-124],0
+ 01A2 568300            mov [X-125],0
+ 01A5                   .dbline 61
+ 01A5           ;                       for (k = 3; k < 6; k++)
+ 01A5 560003            mov [X+0],3
+ 01A8 805A              xjmp L34
+ 01AA           L31:
+ 01AA                   .dbline 62
+ 01AA           ;                               add += ad[(i * 16) + k];
+ 01AA 62D000            mov REG[0xd0],>__r0
+ 01AD 5200              mov A,[X+0]
+ 01AF 5300              mov [__r1],A
+ 01B1 550000            mov [__r0],0
+ 01B4 5201              mov A,[X+1]
+ 01B6 5300              mov [__r3],A
+ 01B8 550000            mov [__r2],0
+ 01BB 6500              asl [__r3]
+ 01BD 6B00              rlc [__r2]
+ 01BF 6500              asl [__r3]
+ 01C1 6B00              rlc [__r2]
+ 01C3 6500              asl [__r3]
+ 01C5 6B00              rlc [__r2]
+ 01C7 6500              asl [__r3]
+ 01C9 6B00              rlc [__r2]
+ 01CB 5100              mov A,[__r3]
+ 01CD 0200              add A,[__r1]
+ 01CF 5300              mov [__r1],A
+ 01D1 5100              mov A,[__r2]
+ 01D3 0A00              adc A,[__r0]
+ 01D5 5300              mov [__r0],A
+ 01D7 5A00              mov [__r3],X
+ 01D9 060002            add [__r3],2
+ 01DC 5100              mov A,[__r3]
+ 01DE 0400              add [__r1],A
+ 01E0 0E0007            adc [__r0],7
+ 01E3 5100              mov A,[__r0]
+ 01E5 60D4              mov REG[0xd4],A
+ 01E7 3E00              mvi A,[__r1]
+ 01E9 5300              mov [__r1],A
+ 01EB 550000            mov [__r0],0
+ 01EE 470080            tst [__r1],-128
+ 01F1 A004              jz X7
+ 01F3 5500FF            mov [__r0],-1
+ 01F6           X7:
+ 01F6 62D000            mov REG[0xd0],>__r0
+ 01F9 5100              mov A,[__r1]
+ 01FB 0584              add [X-124],A
+ 01FD 5100              mov A,[__r0]
+ 01FF 0D83              adc [X-125],A
+ 0201           L32:
+ 0201                   .dbline 61
+ 0201 7700              inc [X+0]
+ 0203           L34:
+ 0203                   .dbline 61
+ 0203 3D0006            cmp [X+0],6
+ 0206 CFA3              jc L31
+ 0208           X8:
+ 0208                   .dbline 63
+ 0208           ;                       add /= (3 * 11);
+ 0208 5000              mov A,0
+ 020A 08                push A
+ 020B 5021              mov A,33
+ 020D 08                push A
+ 020E 5283              mov A,[X-125]
+ 0210 08                push A
+ 0211 5284              mov A,[X-124]
+ 0213 08                push A
+ 0214 62D000            mov REG[0xd0],>__r0
+ 0217 7C0000            xcall __divmod_16X16_16
+ 021A 18                pop A
+ 021B 5484              mov [X-124],A
+ 021D 18                pop A
+ 021E 5483              mov [X-125],A
+ 0220 38FE              add SP,-2
+ 0222                   .dbline 64
+ 0222           ;                       LCD_1_DrawVBG(1, i * 5 + 1, 2, add + 6);
+ 0222 5284              mov A,[X-124]
+ 0224 0106              add A,6
+ 0226 10                push X
+ 0227 08                push A
+ 0228 5002              mov A,2
+ 022A 08                push A
+ 022B 5201              mov A,[X+1]
+ 022D 60E8              mov REG[0xe8],A
+ 022F 62E905            mov REG[0xe9],5
+ 0232 40                nop
+ 0233 5DEB              mov A,REG[0xeb]
+ 0235 5300              mov [__r0],A
+ 0237 060001            add [__r0],1
+ 023A 5100              mov A,[__r0]
+ 023C 08                push A
+ 023D 5001              mov A,1
+ 023F 08                push A
+ 0240 7C0000            xcall _LCD_1_DrawVBG
+ 0243 38FC              add SP,-4
+ 0245 20                pop X
+ 0246                   .dbline 66
+ 0246           ;                       
+ 0246           ;                       add = 0;
+ 0246 568400            mov [X-124],0
+ 0249 568300            mov [X-125],0
+ 024C                   .dbline 67
+ 024C           ;                       for (k = 6; k < 10; k++)
+ 024C 560006            mov [X+0],6
+ 024F 805A              xjmp L38
+ 0251           L35:
+ 0251                   .dbline 68
+ 0251           ;                               add += ad[(i * 16) + k];
+ 0251 62D000            mov REG[0xd0],>__r0
+ 0254 5200              mov A,[X+0]
+ 0256 5300              mov [__r1],A
+ 0258 550000            mov [__r0],0
+ 025B 5201              mov A,[X+1]
+ 025D 5300              mov [__r3],A
+ 025F 550000            mov [__r2],0
+ 0262 6500              asl [__r3]
+ 0264 6B00              rlc [__r2]
+ 0266 6500              asl [__r3]
+ 0268 6B00              rlc [__r2]
+ 026A 6500              asl [__r3]
+ 026C 6B00              rlc [__r2]
+ 026E 6500              asl [__r3]
+ 0270 6B00              rlc [__r2]
+ 0272 5100              mov A,[__r3]
+ 0274 0200              add A,[__r1]
+ 0276 5300              mov [__r1],A
+ 0278 5100              mov A,[__r2]
+ 027A 0A00              adc A,[__r0]
+ 027C 5300              mov [__r0],A
+ 027E 5A00              mov [__r3],X
+ 0280 060002            add [__r3],2
+ 0283 5100              mov A,[__r3]
+ 0285 0400              add [__r1],A
+ 0287 0E0007            adc [__r0],7
+ 028A 5100              mov A,[__r0]
+ 028C 60D4              mov REG[0xd4],A
+ 028E 3E00              mvi A,[__r1]
+ 0290 5300              mov [__r1],A
+ 0292 550000            mov [__r0],0
+ 0295 470080            tst [__r1],-128
+ 0298 A004              jz X9
+ 029A 5500FF            mov [__r0],-1
+ 029D           X9:
+ 029D 62D000            mov REG[0xd0],>__r0
+ 02A0 5100              mov A,[__r1]
+ 02A2 0584              add [X-124],A
+ 02A4 5100              mov A,[__r0]
+ 02A6 0D83              adc [X-125],A
+ 02A8           L36:
+ 02A8                   .dbline 67
+ 02A8 7700              inc [X+0]
+ 02AA           L38:
+ 02AA                   .dbline 67
+ 02AA 3D000A            cmp [X+0],10
+ 02AD CFA3              jc L35
+ 02AF           X10:
+ 02AF                   .dbline 69
+ 02AF           ;                       add /= (4 * 11);
+ 02AF 5000              mov A,0
+ 02B1 08                push A
+ 02B2 502C              mov A,44
+ 02B4 08                push A
+ 02B5 5283              mov A,[X-125]
+ 02B7 08                push A
+ 02B8 5284              mov A,[X-124]
+ 02BA 08                push A
+ 02BB 62D000            mov REG[0xd0],>__r0
+ 02BE 7C0000            xcall __divmod_16X16_16
+ 02C1 18                pop A
+ 02C2 5484              mov [X-124],A
+ 02C4 18                pop A
+ 02C5 5483              mov [X-125],A
+ 02C7 38FE              add SP,-2
+ 02C9                   .dbline 70
+ 02C9           ;                       LCD_1_DrawVBG(1, i * 5 + 2, 2, add + 6);
+ 02C9 5284              mov A,[X-124]
+ 02CB 0106              add A,6
+ 02CD 10                push X
+ 02CE 08                push A
+ 02CF 5002              mov A,2
+ 02D1 08                push A
+ 02D2 5201              mov A,[X+1]
+ 02D4 60E8              mov REG[0xe8],A
+ 02D6 62E905            mov REG[0xe9],5
+ 02D9 40                nop
+ 02DA 5DEB              mov A,REG[0xeb]
+ 02DC 5300              mov [__r0],A
+ 02DE 060002            add [__r0],2
+ 02E1 5100              mov A,[__r0]
+ 02E3 08                push A
+ 02E4 5001              mov A,1
+ 02E6 08                push A
+ 02E7 7C0000            xcall _LCD_1_DrawVBG
+ 02EA 38FC              add SP,-4
+ 02EC 20                pop X
+ 02ED                   .dbline 72
+ 02ED           ;                       
+ 02ED           ;                       add = 0;
+ 02ED 568400            mov [X-124],0
+ 02F0 568300            mov [X-125],0
+ 02F3                   .dbline 73
+ 02F3           ;                       for (k = 10; k < 13; k++)
+ 02F3 56000A            mov [X+0],10
+ 02F6 805A              xjmp L42
+ 02F8           L39:
+ 02F8                   .dbline 74
+ 02F8           ;                               add += ad[(i * 16) + k];
+ 02F8 62D000            mov REG[0xd0],>__r0
+ 02FB 5200              mov A,[X+0]
+ 02FD 5300              mov [__r1],A
+ 02FF 550000            mov [__r0],0
+ 0302 5201              mov A,[X+1]
+ 0304 5300              mov [__r3],A
+ 0306 550000            mov [__r2],0
+ 0309 6500              asl [__r3]
+ 030B 6B00              rlc [__r2]
+ 030D 6500              asl [__r3]
+ 030F 6B00              rlc [__r2]
+ 0311 6500              asl [__r3]
+ 0313 6B00              rlc [__r2]
+ 0315 6500              asl [__r3]
+ 0317 6B00              rlc [__r2]
+ 0319 5100              mov A,[__r3]
+ 031B 0200              add A,[__r1]
+ 031D 5300              mov [__r1],A
+ 031F 5100              mov A,[__r2]
+ 0321 0A00              adc A,[__r0]
+ 0323 5300              mov [__r0],A
+ 0325 5A00              mov [__r3],X
+ 0327 060002            add [__r3],2
+ 032A 5100              mov A,[__r3]
+ 032C 0400              add [__r1],A
+ 032E 0E0007            adc [__r0],7
+ 0331 5100              mov A,[__r0]
+ 0333 60D4              mov REG[0xd4],A
+ 0335 3E00              mvi A,[__r1]
+ 0337 5300              mov [__r1],A
+ 0339 550000            mov [__r0],0
+ 033C 470080            tst [__r1],-128
+ 033F A004              jz X11
+ 0341 5500FF            mov [__r0],-1
+ 0344           X11:
+ 0344 62D000            mov REG[0xd0],>__r0
+ 0347 5100              mov A,[__r1]
+ 0349 0584              add [X-124],A
+ 034B 5100              mov A,[__r0]
+ 034D 0D83              adc [X-125],A
+ 034F           L40:
+ 034F                   .dbline 73
+ 034F 7700              inc [X+0]
+ 0351           L42:
+ 0351                   .dbline 73
+ 0351 3D000D            cmp [X+0],13
+ 0354 CFA3              jc L39
+ 0356           X12:
+ 0356                   .dbline 75
+ 0356           ;                       add /= (3 * 11);
+ 0356 5000              mov A,0
+ 0358 08                push A
+ 0359 5021              mov A,33
+ 035B 08                push A
+ 035C 5283              mov A,[X-125]
+ 035E 08                push A
+ 035F 5284              mov A,[X-124]
+ 0361 08                push A
+ 0362 62D000            mov REG[0xd0],>__r0
+ 0365 7C0000            xcall __divmod_16X16_16
+ 0368 18                pop A
+ 0369 5484              mov [X-124],A
+ 036B 18                pop A
+ 036C 5483              mov [X-125],A
+ 036E 38FE              add SP,-2
+ 0370                   .dbline 76
+ 0370           ;                       LCD_1_DrawVBG(1, i * 5 + 3, 2, add + 6);
+ 0370 5284              mov A,[X-124]
+ 0372 0106              add A,6
+ 0374 10                push X
+ 0375 08                push A
+ 0376 5002              mov A,2
+ 0378 08                push A
+ 0379 5201              mov A,[X+1]
+ 037B 60E8              mov REG[0xe8],A
+ 037D 62E905            mov REG[0xe9],5
+ 0380 40                nop
+ 0381 5DEB              mov A,REG[0xeb]
+ 0383 5300              mov [__r0],A
+ 0385 060003            add [__r0],3
+ 0388 5100              mov A,[__r0]
+ 038A 08                push A
+ 038B 5001              mov A,1
+ 038D 08                push A
+ 038E 7C0000            xcall _LCD_1_DrawVBG
+ 0391 38FC              add SP,-4
+ 0393 20                pop X
+ 0394                   .dbline 78
+ 0394           ;                       
+ 0394           ;                       add = 0;
+ 0394 568400            mov [X-124],0
+ 0397 568300            mov [X-125],0
+ 039A                   .dbline 79
+ 039A           ;                       for (k = 13; k < 16; k++)
+ 039A 56000D            mov [X+0],13
+ 039D 805A              xjmp L46
+ 039F           L43:
+ 039F                   .dbline 80
+ 039F           ;                               add += ad[(i * 16) + k];
+ 039F 62D000            mov REG[0xd0],>__r0
+ 03A2 5200              mov A,[X+0]
+ 03A4 5300              mov [__r1],A
+ 03A6 550000            mov [__r0],0
+ 03A9 5201              mov A,[X+1]
+ 03AB 5300              mov [__r3],A
+ 03AD 550000            mov [__r2],0
+ 03B0 6500              asl [__r3]
+ 03B2 6B00              rlc [__r2]
+ 03B4 6500              asl [__r3]
+ 03B6 6B00              rlc [__r2]
+ 03B8 6500              asl [__r3]
+ 03BA 6B00              rlc [__r2]
+ 03BC 6500              asl [__r3]
+ 03BE 6B00              rlc [__r2]
+ 03C0 5100              mov A,[__r3]
+ 03C2 0200              add A,[__r1]
+ 03C4 5300              mov [__r1],A
+ 03C6 5100              mov A,[__r2]
+ 03C8 0A00              adc A,[__r0]
+ 03CA 5300              mov [__r0],A
+ 03CC 5A00              mov [__r3],X
+ 03CE 060002            add [__r3],2
+ 03D1 5100              mov A,[__r3]
+ 03D3 0400              add [__r1],A
+ 03D5 0E0007            adc [__r0],7
+ 03D8 5100              mov A,[__r0]
+ 03DA 60D4              mov REG[0xd4],A
+ 03DC 3E00              mvi A,[__r1]
+ 03DE 5300              mov [__r1],A
+ 03E0 550000            mov [__r0],0
+ 03E3 470080            tst [__r1],-128
+ 03E6 A004              jz X13
+ 03E8 5500FF            mov [__r0],-1
+ 03EB           X13:
+ 03EB 62D000            mov REG[0xd0],>__r0
+ 03EE 5100              mov A,[__r1]
+ 03F0 0584              add [X-124],A
+ 03F2 5100              mov A,[__r0]
+ 03F4 0D83              adc [X-125],A
+ 03F6           L44:
+ 03F6                   .dbline 79
+ 03F6 7700              inc [X+0]
+ 03F8           L46:
+ 03F8                   .dbline 79
+ 03F8 3D0010            cmp [X+0],16
+ 03FB CFA3              jc L43
+ 03FD           X14:
+ 03FD                   .dbline 81
+ 03FD           ;                       add /= (3 * 11);
+ 03FD 5000              mov A,0
+ 03FF 08                push A
+ 0400 5021              mov A,33
+ 0402 08                push A
+ 0403 5283              mov A,[X-125]
+ 0405 08                push A
+ 0406 5284              mov A,[X-124]
+ 0408 08                push A
+ 0409 62D000            mov REG[0xd0],>__r0
+ 040C 7C0000            xcall __divmod_16X16_16
+ 040F 18                pop A
+ 0410 5484              mov [X-124],A
+ 0412 18                pop A
+ 0413 5483              mov [X-125],A
+ 0415 38FE              add SP,-2
+ 0417                   .dbline 82
+ 0417           ;                       LCD_1_DrawVBG(1, i * 5 + 4, 2, add + 6);
+ 0417 5284              mov A,[X-124]
+ 0419 0106              add A,6
+ 041B 10                push X
+ 041C 08                push A
+ 041D 5002              mov A,2
+ 041F 08                push A
+ 0420 5201              mov A,[X+1]
+ 0422 60E8              mov REG[0xe8],A
+ 0424 62E905            mov REG[0xe9],5
+ 0427 40                nop
+ 0428 5DEB              mov A,REG[0xeb]
+ 042A 5300              mov [__r0],A
+ 042C 060004            add [__r0],4
+ 042F 5100              mov A,[__r0]
+ 0431 08                push A
+ 0432 5001              mov A,1
+ 0434 08                push A
+ 0435 7C0000            xcall _LCD_1_DrawVBG
+ 0438 38FC              add SP,-4
+ 043A 20                pop X
+ 043B                   .dbline 83
+ 043B           ;               }
+ 043B           L24:
+ 043B                   .dbline 52
+ 043B 7701              inc [X+1]
+ 043D           L26:
+ 043D                   .dbline 52
+ 043D 3D0108            cmp [X+1],8
+ 0440 CCBE              jc L23
+ 0442           X15:
+ 0442                   .dbline 84
+ 0442           ;       }
+ 0442           L15:
+ 0442                   .dbline 36
+ 0442 8C48              xjmp L14
+ 0444           X0:
+ 0444                   .dbline -2
+ 0444           L1:
+ 0444 387B              add SP,-133
+ 0446 20                pop X
+ 0447                   .dbline 0 ; func end
+ 0447 8FFF              jmp .
+ 0449                   .dbsym l add 131 I
+ 0449                   .dbsym l ad 2 A[129:129]C
+ 0449                   .dbsym l i 1 c
+ 0449                   .dbsym l k 0 c
+ 0449                   .dbend

@@ -1,0 +1,10 @@
+flash  90B SRAM    5:
+ 00 5 bytes
+flash  90F SRAM    A:
+ <size at next line>  FE  0  0  1  1 E0  0  2  0 1C  0  4 62  3  0  4 B5  0 80  8 F4 80 40  C 64 80 40  C  3  0 40  A  0  0 40  8  0  0 40  4  0  0 80  3  0  1  0  0 FE  6  0  0  1 F8
+  [size:] 54 bytes
+flash  948 SRAM   40:
+ 00 5 bytes
+flash  94C SRAM   54:
+ <size at next line>   0  0  0
+  [size:] 3 bytes

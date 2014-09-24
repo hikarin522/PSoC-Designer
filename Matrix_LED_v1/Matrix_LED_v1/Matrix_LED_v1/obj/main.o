@@ -1,0 +1,96 @@
+XH
+H 3 areas A global symbols
+M main.c
+S _Matrix_DrawRaster Ref0000
+S _Matrix_DrawVector Ref0000
+S _SleepTimer_1_Start Ref0000
+S _Timer8_1_DisableInt Ref0000
+S _SleepTimer_1_TickWait Ref0000
+S _Matrix_UnSetRaster Ref0000
+S _Timer8_1_Start Ref0000
+S _SleepTimer_1_EnableInt Ref0000
+A text size C3 flags 0
+dbfile ./main.c
+dbfile C:\Users\hikari\DOCUME~1\PSOCDE~1.4PR\MATRIX~2\MATRIX~1\MATRIX~1\main.c
+dbfunc e main 0 fV
+dbsym l i 0 c
+dbline FFFFFFFF 0
+dbline 1D 4
+dbline 1E 4
+dbline 1F 7
+dbline 22 9
+dbline 23 D
+dbline 25 10
+dbline 26 13
+dbline 29 19
+dbline 2A 19
+dbline 2D 54
+dbline 2E 57
+dbline 2F 66
+dbline 32 68
+dbline 33 77
+dbline 36 79
+dbline 37 86
+dbline 3A 88
+dbline 3B 97
+dbline 3E 99
+dbline 3F A4
+dbline 42 A6
+dbline 43 A9
+dbline 46 A9
+dbline 47 B5
+dbline 48 BC
+dbline 28 BC
+dbline FFFFFFFE BE
+dbline 0 C1
+S _main Def0000
+A data size 40 flags 20
+dbfile ./main.c
+dbfile C:\Users\hikari\DOCUME~1\PSOCDE~1.4PR\MATRIX~2\MATRIX~1\MATRIX~1\main.c
+dbstruct 64 .2
+dbfield 0 data A[64:16]l
+dbend
+dbsym e mamesiba 0 S[.2]
+S _mamesiba Def0000
+A data size 0 flags 20
+dbfile C:\Users\hikari\DOCUME~1\PSOCDE~1.4PR\MATRIX~2\MATRIX~1\MATRIX~1\main.c
+T 00 00 00 00 00 00 00 FE 00 00 01 01 E0 00 02 00
+R 00 00 00 01
+T 00 0E 1C 00 04 62 03 00 04 B5 00 80 08 F4 80 40
+R 00 00 00 01
+T 00 1C 0C 64 80 40 0C 03 00 40 0A 00 00 40 08 00
+R 00 00 00 01
+T 00 2A 00 40 04 00 00 80 03 00 01 00 00 FE 06 00
+R 00 00 00 01
+T 00 38 00 01 F8 00 00 00 00 00
+R 00 00 00 01
+T 00 00 10 4F 38 03 56 00 00 71 01 10 7C 00 00 7C
+R 00 00 00 00 02 0D 00 03
+T 00 0E 00 00 7C 00 00 7C 00 00 20 80 A4 52 00 54
+R 00 00 00 00 02 02 00 06 02 05 00 07 02 08 00 02
+T 00 1C 02 56 01 00 3D 01 00 B0 06 3D 02 00 A0 2B
+R 00 00 00 00
+T 00 2A 3D 01 00 B0 06 3D 02 01 A0 35 3D 01 00 B0
+R 00 00 00 00
+T 00 38 06 3D 02 02 A0 3C 3D 01 00 B0 06 3D 02 03
+R 00 00 00 00
+T 00 46 A0 41 3D 01 00 B0 06 3D 02 04 A0 48 80 53
+R 00 00 00 00
+T 00 54 7C 00 00 50 F0 08 08 08 08 50 F0 08 08 7C
+R 00 00 00 00 02 03 00 05
+T 00 62 00 00 38 FA 80 42 50 0F 08 08 08 08 50 F0
+R 00 00 00 00 02 02 00 01
+T 00 70 08 08 7C 00 00 38 FA 80 31 50 0F 08 08 08
+R 00 00 00 00 02 05 00 01
+T 00 7E 08 08 08 7C 00 00 38 FA 80 22 50 F0 08 08
+R 00 00 00 00 02 06 00 01
+T 00 8C 08 08 50 0F 08 08 7C 00 00 38 FA 80 11 50
+R 00 00 00 00 02 09 00 01
+T 00 9A 00 00 08 50 00 00 08 7C 00 00 38 FE 80 04
+R 00 00 00 00 41 02 00 01 01 06 00 01 02 0A 00 00
+T 00 A6 56 00 00 3D 00 04 D0 05 77 00 80 04 56 00
+R 00 00 00 00
+T 00 B4 00 10 50 40 7C 00 00 20 8F 5C 38 FD 20 8F
+R 00 00 00 00 02 07 00 04
+T 00 C2 FF
+R 00 00 00 00

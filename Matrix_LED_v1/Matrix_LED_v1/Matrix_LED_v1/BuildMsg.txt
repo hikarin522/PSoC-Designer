@@ -1,0 +1,120 @@
+Starting MAKE...
+psocmakemake.exe Matrix_LED_v1 -oproject.mk
+
+creating project.mk 
+
+mkdepend.exe -f project.dep -p./obj/ -o.o -- -IC:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include -I./lib -I./std -I. -IC:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C29~1  -- main.c matrix_led.c  boot.asm
+
+mkdepend.exe @mkdep
+
+mkdepend.exe @mkdep
+
+if exist output\Matrix_LED_v1.rom del /F /Q  output\Matrix_LED_v1.rom
+
+if exist output\Matrix_LED_v1.hex del /F /Q  output\Matrix_LED_v1.hex
+
+iasm8c.exe -IC:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include -I./lib -I./std -I. -IC:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C29~1   -g -o lib/obj/psocconfig.o lib/psocconfig.asm
+
+iasm8c.exe -IC:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include -I./lib -I./std -I. -IC:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C29~1   -g -o lib/obj/psocconfigtbl.o lib/psocconfigtbl.asm
+
+iasm8c.exe -IC:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include -I./lib -I./std -I. -IC:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C29~1   -g -o lib/obj/sleeptimer_1.o lib/sleeptimer_1.asm
+
+iasm8c.exe -IC:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include -I./lib -I./std -I. -IC:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C29~1   -g -o lib/obj/sleeptimer_1int.o lib/sleeptimer_1int.asm
+
+iasm8c.exe -IC:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include -I./lib -I./std -I. -IC:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C29~1   -g -o lib/obj/timer8_1.o lib/timer8_1.asm
+
+iasm8c.exe -IC:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include -I./lib -I./std -I. -IC:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C29~1   -g -o lib/obj/timer8_1int.o lib/timer8_1int.asm
+
+ilibw.exe -a lib/libpsoc.a lib/obj/psocconfig.o  
+
+ilibw.exe -a lib/libpsoc.a lib/obj/psocconfigtbl.o  
+
+ilibw.exe -a lib/libpsoc.a lib/obj/sleeptimer_1.o  
+
+ilibw.exe -a lib/libpsoc.a lib/obj/sleeptimer_1int.o  
+
+ilibw.exe -a lib/libpsoc.a lib/obj/timer8_1.o  
+
+ilibw.exe -a lib/libpsoc.a lib/obj/timer8_1int.o
+
+iccm8c.exe -g -e -c -Wf-LMM8 -D_LMM  -IC:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include -I./lib -I./std -I. -IC:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C29~1   -o obj/main.o ./main.c
+
+iccm8c.exe -g -e -c -Wf-LMM8 -D_LMM  -IC:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include -I./lib -I./std -I. -IC:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C29~1   -o obj/matrix_led.o ./matrix_led.c
+
+iasm8c.exe -IC:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include -I./lib -I./std -I. -IC:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C29~1   -g -n -o obj/boot.o ./boot.asm
+
+Linking with linkfile 
+
+-F0x30 -g -blit:0x1a0.0x7fff 
+
+ -bdata:0.0x6ff -rwh:SSCParmBlk:0x00F7.0x00FF -BIlib -I./std -I. -IC:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C29~1   -g -n -o obj/boot.o ./boot.asm
+
+nterruptRAM:0 -Bvirtual_registers -O -elim:UserModules 
+
+ -Bmatrix_led_v1_RAM 
+
+ -o"output/Matrix_LED_v1" 
+
+obj/main.o obj/matrix_led.o 	
+
+ ./lib/libPSoc.a -LC:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/lib/LMM/eightpages C:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/lib/CY8C29000/cms.a C:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/lib/LMM/UASW/MAC/arith.a  
+
+ilinkm8c.exe -u ./obj/boot.o @linkfile
+
+LMM info: area 'InterruptRAM' uses 5 bytes in SRAM bank 0
+
+LMM info: area 'data' item of 64 bytes allocated in SRAM page 0
+
+LMM info: area 'virtual_registers' uses 15 bytes in SRAM page 0
+
+LMM info: area 'data' item of 2 bytes allocated in SRAM page 0
+
+LMM info: area 'data' item of 1 bytes allocated in SRAM page 0
+
+symbol Timer8_1_bReadTimer is unused
+
+symbol Timer8_1_bReadTimerSaveCV is unused
+
+symbol SleepTimer_1_SetInterval is unused
+
+symbol SleepTimer_1_bGetTickCntr is unused
+
+symbol Timer8_1_WritePeriod is unused
+
+symbol Timer8_1_bReadCompareValue is unused
+
+symbol Timer8_1_WriteCompareValue is unused
+
+symbol SleepTimer_1_SetTimer is unused
+
+symbol SleepTimer_1_SyncWait is unused
+
+symbol SleepTimer_1_bGetTimer is unused
+
+symbol SleepTimer_1_Stop is unused
+
+symbol SleepTimer_1_DisableInt is unused
+
+symbol Timer8_1_Stop is unused
+
+123 bytes unused code deleted
+
+1743 bytes before Code Compression, 1407 after. 7% reduction.
+
+idata dump at output/Matrix_LED_v1.idata
+
+  ROM 6% full. 1899 out of 32768 bytes used (does not include absolute areas).
+
+  RAM 5% full. 87 bytes used (does not include stack usage).
+
+Built with ICCM8C STD V7.05.00
+
+ilstm8c.exe -r output/Matrix_LED_v1.rom
+
+verlst.exe Matrix_LED_v1 C:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools
+
+makehex.exe output/Matrix_LED_v1.rom FlashSecurity.txt 0x7fff 0x30 output/Matrix_LED_v1.hex
+
+ 
+Matrix_LED_v1 - 0 error(s) 0 warning(s) 19:32:43
+
