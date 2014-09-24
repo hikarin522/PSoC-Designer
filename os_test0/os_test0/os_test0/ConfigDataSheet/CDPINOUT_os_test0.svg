@@ -1,0 +1,827 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20000303 Stylable//EN" "http://www.w3.org/TR/2000/03/WD-SVG-20000303/DTD/ svg-20000303-stylable.dtd">
+
+<svg zoomAndPan="magnify" xmlns:xmlns="http://www.w3.org/2000/svg-20000303-stylable" font-family="Helvetica" preserveAspectRatio="xMinYMin meet" viewBox=" 0 0 430 520">
+  
+
+
+  
+
+
+
+  <desc>
+    InterConnect View 
+  </desc>
+  
+
+
+  
+
+  <style type="text/css">
+  </style>
+  
+
+
+  <script type="text/ecmascript">
+    
+  
+     
+  </script>
+  
+
+
+  <g id="docBody">
+      
+
+    	
+
+    <defs>
+      
+	
+      <linearGradient gradientTransform="rotate(90)" id="MyGradientDarkYellow2">
+         
+		
+        <stop style="stop-color:lightgrey" offset="0%" />
+         
+		
+        <stop style="stop-color:navajowhite" offset="50%" />
+         
+		
+        <stop style="stop-color:lightgrey" offset="100%" />
+         
+	
+      </linearGradient>
+       
+
+	
+      <linearGradient gradientTransform="rotate(90)" id="MyGradientDarkYellow3">
+         
+		
+        <stop style="stop-color:lightgrey" offset="0%" />
+         
+		
+        <stop style="stop-color:navajowhite" offset="10%" />
+         
+		
+        <stop style="stop-color:lightgrey" offset="20%" />
+         
+		
+        <stop style="stop-color:navajowhite" offset="30%" />
+         
+		
+        <stop style="stop-color:lightgrey" offset="40%" />
+         
+		
+        <stop style="stop-color:navajowhite" offset="50%" />
+         
+		
+        <stop style="stop-color:lightgrey" offset="60%" />
+         
+		
+        <stop style="stop-color:navajowhite" offset="70%" />
+         
+		
+        <stop style="stop-color:lightgrey" offset="80%" />
+         
+		
+        <stop style="stop-color:navajowhite" offset="90%" />
+         
+		
+        <stop style="stop-color:lightgrey" offset="100%" />
+         
+	
+      </linearGradient>
+       
+
+	
+      <linearGradient gradientTransform="rotate(90)" id="MyGradientDarkYellow">
+         
+		
+        <stop style="stop-color:lightgrey" offset="0%" />
+         
+		
+        <stop style="stop-color:goldenrod" offset="100%" />
+         
+		//
+        <stop style="stop-color:black" offset="100%" />
+         
+	
+      </linearGradient>
+       
+
+	
+      <linearGradient gradientTransform="rotate(90)" id="MyGradientDarkCyan">
+         
+		
+        <stop style="stop-color:lightgrey" offset="0%" />
+         
+		
+        <stop style="stop-color:darkcyan" offset="100%" />
+         
+		//
+        <stop style="stop-color:black" offset="100%" />
+         
+	
+      </linearGradient>
+       
+
+	
+      <linearGradient gradientTransform="rotate(90)" id="MyGradientMagenta">
+         
+		
+        <stop style="stop-color:lightgrey" offset="0%" />
+         
+		
+        <stop style="stop-color:magenta" offset="100%" />
+         
+		//
+        <stop style="stop-color:black" offset="100%" />
+         
+	
+      </linearGradient>
+       
+
+	
+      <linearGradient gradientTransform="rotate(90)" id="MyGradientCyan">
+         
+		
+        <stop style="stop-color:lightgrey" offset="0%" />
+         
+		
+        <stop style="stop-color:cyan" offset="100%" />
+         
+		//
+        <stop style="stop-color:black" offset="100%" />
+         
+	
+      </linearGradient>
+       
+									
+	
+      <linearGradient gradientTransform="rotate(90)" id="MyGradientBlue">
+         
+		
+        <stop style="stop-color:lightgrey" offset="0%" />
+         
+		
+        <stop style="stop-color:dodgerblue" offset="100%" />
+         
+		//
+        <stop style="stop-color:black" offset="100%" />
+         
+	
+      </linearGradient>
+       
+
+	
+      <linearGradient gradientTransform="rotate(90)" id="MyGradientDarkGreen">
+         
+		
+        <stop style="stop-color:lightgrey" offset="0%" />
+         
+		
+        <stop style="stop-color:forestgreen" offset="100%" />
+         
+		//
+        <stop style="stop-color:black" offset="100%" />
+         
+	
+      </linearGradient>
+       
+
+	
+      <linearGradient gradientTransform="rotate(90)" id="MyGradientNoColor">
+         
+		
+        <stop style="stop-color:white" offset="0%" />
+         
+		
+        <stop style="stop-color:lightgrey" offset="100%" />
+         
+		//
+        <stop style="stop-color:black" offset="100%" />
+         
+	
+      </linearGradient>
+       
+
+	
+      <linearGradient gradientTransform="rotate(90)" id="MyGradientRed">
+         
+		
+        <stop style="stop-color:lightgrey" offset="0%" />
+         
+		
+        <stop style="stop-color:indianred" offset="100%" />
+         
+	
+      </linearGradient>
+       
+
+	
+      <linearGradient gradientTransform="rotate(90)" id="MyGradientDarkMagenta">
+         
+		
+        <stop style="stop-color:lightgrey" offset="0%" />
+         
+		
+        <stop style="stop-color:mediumorchid" offset="100%" />
+         
+		//
+        <stop style="stop-color:black" offset="100%" />
+         
+	
+      </linearGradient>
+       
+
+	
+      <linearGradient gradientTransform="rotate(90)" id="MyGradientGreen">
+         
+		
+        <stop style="stop-color:lightgrey" offset="0%" />
+         
+		
+        <stop style="stop-color:lightgreen" offset="100%" />
+         
+		//
+        <stop style="stop-color:black" offset="100%" />
+         
+	
+      </linearGradient>
+       
+
+	
+      <linearGradient gradientTransform="rotate(90)" id="MyGradientYellow">
+         
+		
+        <stop style="stop-color:lightgrey" offset="0%" />
+         
+		
+        <stop style="stop-color:yellow" offset="100%" />
+         
+		//
+        <stop style="stop-color:black" offset="100%" />
+         
+	
+      </linearGradient>
+       
+
+	
+      <linearGradient gradientTransform="rotate(90)" id="MyGradientDarkRed">
+         
+		
+        <stop style="stop-color:lightgrey" offset="0%" />
+         
+		
+        <stop style="stop-color:firebrick" offset="100%" />
+         
+		//
+        <stop style="stop-color:black" offset="100%" />
+         
+	
+      </linearGradient>
+       
+
+	
+      
+	
+      <marker preserveAspectRatio="xMidYMid meet" refY="4" refX="4" markerHeight="10" markerWidth="10" id="mCircle">
+        
+		
+        <circle style="fill:black stroke:black" r="3" cy="4" cx="4" />
+        
+	
+      </marker>
+      
+
+	
+      
+
+	
+      <g id="Symbol_AND">
+        
+		
+        <g transform="scale(.35)">
+          
+			
+          <path d="M29.641,9l-1.441,1.8     L26.4,12.48l-2.041,1.439l-2.399,1.32l-2.761,1.08l-2.879,0.96L13.2,17.88H6.12l1.44-2.16l1.08-2.28l0.6-2.16L9.48,9L9.24,6.72     l-0.6-2.28L7.56,2.16L6.12,0h7.08l3.12,0.6l2.879,0.96l2.761,1.08l2.399,1.32l2.16,1.56l1.68,1.68L29.641,9" stroke-linejoin="round" stroke-linecap="round" stroke-width="1.5" />
+          
+	
+			
+          <path d="M20.641,17.88H6.12V0     h14.521l1.92,0.24l1.92,0.6l1.68,1.08L27.6,3.36l1.08,1.68L29.4,6.96L29.641,9l-0.24,2.041l-0.721,1.799L27.6,14.52l-1.439,1.44     l-1.68,1.08l-1.92,0.6L20.641,17.88" stroke-linejoin="round" stroke-linecap="round" stroke-width="1.5" />
+          
+			
+          <path d="M29.50,9 l 5 0" stroke-linejoin="round" stroke-linecap="round" stroke-width="1.5" />
+          
+		
+        </g>
+        
+	
+      </g>
+      
+	
+	
+      <g id="Symbol_OR">
+        
+		
+        <g transform="scale(.35)">
+          
+			
+          <path d="M35.76,9H17.88" stroke-linejoin="round" stroke-linecap="round" stroke-width="1.5" />
+          
+			
+          <path d="M29.641,9l-1.441,1.8     L26.4,12.48l-2.041,1.439l-2.399,1.32l-2.761,1.08l-2.879,0.96L13.2,17.88H6.12l1.44-2.16l1.08-2.28l0.6-2.16L9.48,9L9.24,6.72     l-0.6-2.28L7.56,2.16L6.12,0h7.08l3.12,0.6l2.879,0.96l2.761,1.08l2.399,1.32l2.16,1.56l1.68,1.68L29.641,9" stroke-linejoin="round" stroke-linecap="round" stroke-width="1.5" />
+          
+		
+        </g>
+        
+	
+      </g>
+      
+
+	
+      <g id="Symbol_XOR">
+        
+		
+        <g transform="scale(.35)">
+          
+			
+          <path d="M35.76,9H17.88" stroke-linejoin="round" stroke-linecap="round" stroke-width="1.5" />
+          
+			
+          <path d="M29.641,9l-1.441,1.8L26.4,12.48l-2.041,1.439l-2.399,1.32l-2.761,1.08l-2.879,0.96L13.2,17.88H6.12     l1.44-2.16l1.08-2.28l0.6-2.16L9.48,9L9.24,6.72l-0.6-2.28L7.56,2.16L6.12,0h7.08l3.12,0.6l2.879,0.96l2.761,1.08l2.399,1.32     l2.16,1.56l1.68,1.68L29.641,9" />
+          
+			
+          <path d="M29.641,9l-1.441,1.8     L26.4,12.48l-2.041,1.439l-2.399,1.32l-2.761,1.08l-2.879,0.96L13.2,17.88H6.12l1.44-2.16l1.08-2.28l0.6-2.16L9.48,9L9.24,6.72     l-0.6-2.28L7.56,2.16L6.12,0h7.08l3.12,0.6l2.879,0.96l2.761,1.08l2.399,1.32l2.16,1.56l1.68,1.68L29.641,9" stroke-linejoin="round" stroke-linecap="round" stroke-width="1.5" />
+          
+			
+          <path d="M3.84,17.88l1.44-2.16     l0.96-2.28l0.6-2.16L7.08,9L6.84,6.72l-0.6-2.28L5.28,2.16L3.84,0" stroke-linejoin="round" stroke-linecap="round" stroke-width="1.5" />
+          
+		
+        </g>
+        
+	
+      </g>
+      
+
+	
+      <g id="Symbol_NOT">
+        
+		
+        <g transform="scale(.52)">
+          
+			
+          <path d="M13.439,6.72l0.24,0.601l0.48,0.359h0.6    l0.6-0.359L15.48,6.72l-0.121-0.6l-0.6-0.36h-0.6l-0.48,0.36L13.439,6.72 M0,0l13.439,6.72L0,13.439V0" stroke-linejoin="round" stroke-width="1.15" />
+          
+			
+          <path d="M14.52,6.72h5.641" stroke-linejoin="round" stroke-linecap="round" stroke-width="1.15" />
+          
+		
+        </g>
+        
+	
+      </g>
+      	
+
+	
+      <g id="Symbol_NAND">
+        
+		
+        <g transform="scale(.35)">
+          
+			
+          <path d="M35.76,9H17.88" stroke-linejoin="round" stroke-linecap="round" stroke-width="1.5" />
+          
+			
+          <path d="M29.641,9l-1.441,1.8     L26.4,12.48l-2.041,1.439l-2.399,1.32l-2.761,1.08l-2.879,0.96L13.2,17.88H6.12l1.44-2.16l1.08-2.28l0.6-2.16L9.48,9L9.24,6.72     l-0.6-2.28L7.56,2.16L6.12,0h7.08l3.12,0.6l2.879,0.96l2.761,1.08l2.399,1.32l2.16,1.56l1.68,1.68L29.641,9" stroke-linejoin="round" stroke-linecap="round" stroke-width="1.5" />
+          
+			
+          <path d="M32.16,9l-0.12-0.72     L31.561,7.8L30.84,7.68l-0.6,0.12l-0.6,0.48L29.52,9l0.121,0.72l0.6,0.479l0.6,0.12l0.721-0.12L32.04,9.72L32.16,9" stroke-linejoin="round" stroke-linecap="round" stroke-width="1.5" />
+          
+			
+          <path d="M20.641,17.88H6.12V0     h14.521l1.92,0.24l1.92,0.6l1.68,1.08L27.6,3.36l1.08,1.68L29.4,6.96L29.641,9l-0.24,2.041l-0.721,1.799L27.6,14.52l-1.439,1.44     l-1.68,1.08l-1.92,0.6L20.641,17.88" stroke-linejoin="round" stroke-linecap="round" stroke-width="1.5" />
+          
+		
+        </g>
+        
+	
+      </g>
+      
+
+	
+      <g id="Symbol_NOR">
+        
+		
+        <g transform="scale(.35)">
+          
+			
+          <path d="M35.76,9H17.88" stroke-linejoin="round" stroke-linecap="round" stroke-width="1.5" />
+          
+			
+          <path d="M29.641,9l-1.441,1.8     L26.4,12.48l-2.041,1.439l-2.399,1.32l-2.761,1.08l-2.879,0.96L13.2,17.88H6.12l1.44-2.16l1.08-2.28l0.6-2.16L9.48,9L9.24,6.72     l-0.6-2.28L7.56,2.16L6.12,0h7.08l3.12,0.6l2.879,0.96l2.761,1.08l2.399,1.32l2.16,1.56l1.68,1.68L29.641,9" stroke-linejoin="round" stroke-linecap="round" stroke-width="1.5" />
+          
+			
+          <path d="M32.16,9l-0.12-0.72     L31.561,7.8L30.84,7.68l-0.6,0.12l-0.6,0.48L29.52,9l0.121,0.72l0.6,0.479l0.6,0.12l0.721-0.12L32.04,9.72L32.16,9" stroke-linejoin="round" stroke-linecap="round" stroke-width="1.5" />
+          
+		
+        </g>
+        
+	
+      </g>
+      
+
+	
+      <g id="Symbol_XNOR">
+        
+		
+        <g transform="scale(.35)">
+          
+			
+          <path d="M35.76,9H17.88" stroke-linejoin="round" stroke-linecap="round" stroke-width="1.5" />
+          
+			
+          <path d="M29.641,9l-1.441,1.8L26.4,12.48l-2.041,1.439l-2.399,1.32l-2.761,1.08l-2.879,0.96L13.2,17.88H6.12     l1.44-2.16l1.08-2.28l0.6-2.16L9.48,9L9.24,6.72l-0.6-2.28L7.56,2.16L6.12,0h7.08l3.12,0.6l2.879,0.96l2.761,1.08l2.399,1.32     l2.16,1.56l1.68,1.68L29.641,9" />
+          
+			
+          <path d="M29.641,9l-1.441,1.8     L26.4,12.48l-2.041,1.439l-2.399,1.32l-2.761,1.08l-2.879,0.96L13.2,17.88H6.12l1.44-2.16l1.08-2.28l0.6-2.16L9.48,9L9.24,6.72     l-0.6-2.28L7.56,2.16L6.12,0h7.08l3.12,0.6l2.879,0.96l2.761,1.08l2.399,1.32l2.16,1.56l1.68,1.68L29.641,9" stroke-linejoin="round" stroke-linecap="round" stroke-width="1.5" />
+          
+			
+          <path d="M3.84,17.88l1.44-2.16     l0.96-2.28l0.6-2.16L7.08,9L6.84,6.72l-0.6-2.28L5.28,2.16L3.84,0" stroke-linejoin="round" stroke-linecap="round" stroke-width="1.5" />
+          
+			
+          <path d="M32.16,9l-0.12-0.72     L31.561,7.8L30.84,7.68l-0.6,0.12l-0.6,0.48L29.52,9l0.121,0.72l0.6,0.479l0.6,0.12l0.721-0.12L32.04,9.72L32.16,9" stroke-linejoin="round" stroke-linecap="round" stroke-width="1.5" />
+          
+		
+        </g>
+        
+	
+      </g>
+      
+
+	
+      <g id="Symbol_FALSE">
+        
+		
+        <g transform="scale(.40)">
+          
+			
+          <path d="M49.81,9.25     L49.57,7.21l-0.72-1.92l-1.08-1.68l-1.44-1.44l-1.68-1.08l-1.921-0.6L40.69,0.25l-1.92,0.24l-1.92,0.6l-1.68,1.08l-1.441,1.44     L32.65,5.29l-0.72,1.92l-0.24,2.04l0.24,2.04l0.72,1.92l1.079,1.681l1.441,1.439l1.68,1.08l1.92,0.6l1.92,0.24l2.039-0.24     l1.921-0.6l1.68-1.08l1.44-1.439l1.08-1.681l0.72-1.92L49.81,9.25" stroke-linejoin="round" stroke-linecap="round" stroke-width="1.5" />
+          
+		
+        </g>
+        
+	
+      </g>
+      	
+
+	
+      <g id="Symbol_TRUE">
+        
+		
+        <g transform="scale(.40)">
+          
+				
+          <path d="M4.81,0.25v18" stroke-linejoin="round" stroke-linecap="round" stroke-width="1.5" />
+          
+				
+          <path d="M0.25,18.25h9.12" stroke-linejoin="round" stroke-linecap="round" stroke-width="1.5" />
+          
+				
+          <path d="M4.81,0.25L0.25,4.69" stroke-linejoin="round" stroke-linecap="round" stroke-width="1.5" />
+          
+		
+        </g>
+        
+	
+      </g>
+      
+
+	
+      <g id="Symbol_GROUND">
+        
+		
+        <g transform="scale(.40)">
+          
+			
+          <path d="M6.72,22.44V4.8" stroke-linejoin="round" stroke-linecap="square" stroke-width="1.5" />
+          
+			
+          <path d="M3.96,5.52L6.72,0l2.76,5.52H3.96" />
+          
+			
+          <text startOffset="0" transform="matrix(1 0 0 1 0 30.6001)">
+            <tspan font-size="8" font-family="'Courier-Bold'" y="0" x="0">
+              VCC
+            </tspan>
+          </text>
+          
+		
+        </g>
+        
+	
+      </g>
+      
+
+	
+      
+
+	
+      
+	
+	
+      
+
+
+    </defs>
+    
+
+
+
+    
+
+
+    
+
+    <g id="background">
+      
+
+
+	
+      <rect style="fill:  none" height="100%" width="100%" y="0" x="0" id="anchor_pt0" />
+      
+	
+      <rect style="fill:  none" height="96400" width="94000" y="-38560" x="-37600" id="anchor_pt2" />
+      
+	
+      <rect style="fill:  none" height="19280" width="18800" y="0" x="0" id="anchor_pt" />
+      
+
+	
+      <text startOffset="0" y="16" x="425" style="font-family:Sans-Serif;font-size:16;;" id="XYText" />
+      
+	
+	//commented out circle where cursor is
+	
+      <circle cy="0" cx="0" visibility="hidden" stroke="orange" fill="none" r="10" id="cursor" />
+      
+
+
+
+    </g>
+    
+
+
+    
+
+    <g id="Tab1">
+      
+
+      
+
+    </g>
+    
+
+
+
+    <text startOffset="0" y="100" x="100" style="font-family:Sans-Serif;font-size:32;;" id="DbgText" />
+    	
+
+  </g>
+  
+
+  <g id="PinGenericAndAnalogSelectionTable" />
+  
+
+  <g id="PinDigitalSelectionTable" />
+  
+
+  <path stroke-width="2" stroke="black" fill="white" d="M 100 100 l 90 0 a10,10 30 0,0 20,0 l 90 0 l 0 290 l -200 0 l 0 -290" id="BIG_PINOUT" />
+  <text startOffset="0" style=" font-weight:bold; font-size:12; fill:#000000;  text-anchor: middle" y="245" x="200">
+    CY8C29466-24PXI PDIP
+  </text>
+  <text startOffset="0" style=" font-weight:normal; font-size:10; fill:#000000" y="418" x="225">
+    Std CPU
+  </text>
+  <path stroke-width="2" stroke="black" fill="lightskyblue" d="M 180 400 l 40 0l 0 20l -40 0l 0 -20" />
+  <text startOffset="0" style=" font-weight:normal; font-size:10; fill:#000000" y="438" x="225">
+    Global In
+  </text>
+  <path stroke-width="2" stroke="black" fill="lightpink" d="M 180 420 l 40 0l 0 20l -40 0l 0 -20" />
+  <text startOffset="0" style=" font-weight:normal; font-size:10; fill:#000000" y="458" x="225">
+    Global Out
+  </text>
+  <path stroke-width="2" stroke="black" fill="indianred" d="M 180 440 l 40 0l 0 20l -40 0l 0 -20" />
+  <text startOffset="0" style=" font-weight:normal; font-size:10; fill:#000000" y="478" x="225">
+    Analog In
+  </text>
+  <path stroke-width="2" stroke="black" fill="palegreen" d="M 180 460 l 40 0l 0 20l -40 0l 0 -20" />
+  <text startOffset="0" style=" font-weight:normal; font-size:10; fill:#000000" y="498" x="225">
+    Analog Out
+  </text>
+  <path stroke-width="2" stroke="black" fill="seagreen" d="M 180 480 l 40 0l 0 20l -40 0l 0 -20" />
+  <path style="fill:lightskyblue;stroke-width:2;stroke:black;" id="PO_1" d="M 100	100 m 0 10 l -20 0 l 0 10 l 20 0 " />
+  <text startOffset="0" style=" font-size:10; fill:#000000" y="120" x="110">
+    1 P0[7]
+  </text>
+  <text startOffset="0" id="PINDIPLAYNAME_Port_0_7" text-anchor="end" style=" font-size:10; fill:#000000" y="120" x="70">
+    Port_0_7
+  </text>
+  <path style="fill:lightskyblue;stroke-width:2;stroke:black;" id="PO_2" d="M 100	100 m 0 30 l -20 0 l 0 10 l 20 0 " />
+  <path style="fill:lightskyblue;stroke-width:2;stroke:black;" id="PO_3" d="M 100	100 m 0 50 l -20 0 l 0 10 l 20 0 " />
+  <path style="fill:lightskyblue;stroke-width:2;stroke:black;" id="PO_4" d="M 100	100 m 0 70 l -20 0 l 0 10 l 20 0 " />
+  <path style="fill:lightskyblue;stroke-width:2;stroke:black;" id="PO_5" d="M 100	100 m 0 90 l -20 0 l 0 10 l 20 0 " />
+  <path style="fill:lightskyblue;stroke-width:2;stroke:black;" id="PO_6" d="M 100	100 m 0 110 l -20 0 l 0 10 l 20 0 " />
+  <path style="fill:lightskyblue;stroke-width:2;stroke:black;" id="PO_7" d="M 100	100 m 0 130 l -20 0 l 0 10 l 20 0 " />
+  <path style="fill:lightskyblue;stroke-width:2;stroke:black;" id="PO_8" d="M 100	100 m 0 150 l -20 0 l 0 10 l 20 0 " />
+  <path style="fill:white;stroke-width:2;stroke:black;" id="PO_9" d="M 100	100 m 0 170 l -20 0 l 0 10 l 20 0 " />
+  <path style="fill:lightskyblue;stroke-width:2;stroke:black;" id="PO_10" d="M 100	100 m 0 190 l -20 0 l 0 10 l 20 0 " />
+  <path style="fill:lightskyblue;stroke-width:2;stroke:black;" id="PO_11" d="M 100	100 m 0 210 l -20 0 l 0 10 l 20 0 " />
+  <path style="fill:lightskyblue;stroke-width:2;stroke:black;" id="PO_12" d="M 100	100 m 0 230 l -20 0 l 0 10 l 20 0 " />
+  <path style="fill:lightskyblue;stroke-width:2;stroke:black;" id="PO_13" d="M 100	100 m 0 250 l -20 0 l 0 10 l 20 0 " />
+  <path style="fill:white;stroke-width:2;stroke:black;" id="PO_14" d="M 100	100 m 0 270 l -20 0 l 0 10 l 20 0 " />
+  <text startOffset="0" style=" font-size:10; fill:#000000" y="140" x="110">
+    2 P0[5]
+  </text>
+  <text startOffset="0" id="PINDIPLAYNAME_Port_0_5" text-anchor="end" style=" font-size:10; fill:#000000" y="140" x="70">
+    Port_0_5
+  </text>
+  <text startOffset="0" style=" font-size:10; fill:#000000" y="160" x="110">
+    3 P0[3]
+  </text>
+  <text startOffset="0" id="PINDIPLAYNAME_Port_0_3" text-anchor="end" style=" font-size:10; fill:#000000" y="160" x="70">
+    Port_0_3
+  </text>
+  <text startOffset="0" style=" font-size:10; fill:#000000" y="180" x="110">
+    4 P0[1]
+  </text>
+  <text startOffset="0" id="PINDIPLAYNAME_Port_0_1" text-anchor="end" style=" font-size:10; fill:#000000" y="180" x="70">
+    Port_0_1
+  </text>
+  <text startOffset="0" style=" font-size:10; fill:#000000" y="200" x="110">
+    5 P2[7]
+  </text>
+  <text startOffset="0" id="PINDIPLAYNAME_Port_2_7" text-anchor="end" style=" font-size:10; fill:#000000" y="200" x="70">
+    Port_2_7
+  </text>
+  <text startOffset="0" style=" font-size:10; fill:#000000" y="220" x="110">
+    6 P2[5]
+  </text>
+  <text startOffset="0" id="PINDIPLAYNAME_Port_2_5" text-anchor="end" style=" font-size:10; fill:#000000" y="220" x="70">
+    Port_2_5
+  </text>
+  <text startOffset="0" style=" font-size:10; fill:#000000" y="240" x="110">
+    7 P2[3]
+  </text>
+  <text startOffset="0" id="PINDIPLAYNAME_Port_2_3" text-anchor="end" style=" font-size:10; fill:#000000" y="240" x="70">
+    Port_2_3
+  </text>
+  <text startOffset="0" style=" font-size:10; fill:#000000" y="260" x="110">
+    8 P2[1]
+  </text>
+  <text startOffset="0" id="PINDIPLAYNAME_Port_2_1" text-anchor="end" style=" font-size:10; fill:#000000" y="260" x="70">
+    Port_2_1
+  </text>
+  <text startOffset="0" style=" font-size:10; fill:#000000" y="280" x="110">
+    9 SMP
+  </text>
+  <text startOffset="0" id="PINDIPLAYNAME_" text-anchor="end" style=" font-size:10; fill:#000000" y="280" x="70">
+    
+  </text>
+  <text startOffset="0" style=" font-size:10; fill:#000000" y="300" x="110">
+    10 P1[7]
+  </text>
+  <text startOffset="0" id="PINDIPLAYNAME_Port_1_7" text-anchor="end" style=" font-size:10; fill:#000000" y="300" x="70">
+    Port_1_7
+  </text>
+  <text startOffset="0" style=" font-size:10; fill:#000000" y="320" x="110">
+    11 P1[5]
+  </text>
+  <text startOffset="0" id="PINDIPLAYNAME_Port_1_5" text-anchor="end" style=" font-size:10; fill:#000000" y="320" x="70">
+    Port_1_5
+  </text>
+  <text startOffset="0" style=" font-size:10; fill:#000000" y="340" x="110">
+    12 P1[3]
+  </text>
+  <text startOffset="0" id="PINDIPLAYNAME_Port_1_3" text-anchor="end" style=" font-size:10; fill:#000000" y="340" x="70">
+    Port_1_3
+  </text>
+  <text startOffset="0" style=" font-size:10; fill:#000000" y="360" x="110">
+    13 P1[1]
+  </text>
+  <text startOffset="0" id="PINDIPLAYNAME_Port_1_1" text-anchor="end" style=" font-size:10; fill:#000000" y="360" x="70">
+    Port_1_1
+  </text>
+  <text startOffset="0" style=" font-size:10; fill:#000000" y="380" x="110">
+    14 VSS
+  </text>
+  <text startOffset="0" id="PINDIPLAYNAME_" text-anchor="end" style=" font-size:10; fill:#000000" y="380" x="70">
+    
+  </text>
+  <path style="fill:white;stroke-width:2;stroke:black;" id="PO_28" d="M 100 100 m 200 10 l 20 0 l 0 10 l -20 0 " />
+  <path style="fill:lightskyblue;stroke-width:2;stroke:black;" id="PO_27" d="M 100 100 m 200 30 l 20 0 l 0 10 l -20 0 " />
+  <path style="fill:lightskyblue;stroke-width:2;stroke:black;" id="PO_26" d="M 100 100 m 200 50 l 20 0 l 0 10 l -20 0 " />
+  <path style="fill:lightskyblue;stroke-width:2;stroke:black;" id="PO_25" d="M 100 100 m 200 70 l 20 0 l 0 10 l -20 0 " />
+  <path style="fill:lightskyblue;stroke-width:2;stroke:black;" id="PO_24" d="M 100 100 m 200 90 l 20 0 l 0 10 l -20 0 " />
+  <path style="fill:lightskyblue;stroke-width:2;stroke:black;" id="PO_23" d="M 100 100 m 200 110 l 20 0 l 0 10 l -20 0 " />
+  <path style="fill:lightskyblue;stroke-width:2;stroke:black;" id="PO_22" d="M 100 100 m 200 130 l 20 0 l 0 10 l -20 0 " />
+  <path style="fill:lightskyblue;stroke-width:2;stroke:black;" id="PO_21" d="M 100 100 m 200 150 l 20 0 l 0 10 l -20 0 " />
+  <path style="fill:lightskyblue;stroke-width:2;stroke:black;" id="PO_20" d="M 100 100 m 200 170 l 20 0 l 0 10 l -20 0 " />
+  <path style="fill:white;stroke-width:2;stroke:black;" id="PO_19" d="M 100 100 m 200 190 l 20 0 l 0 10 l -20 0 " />
+  <path style="fill:lightskyblue;stroke-width:2;stroke:black;" id="PO_18" d="M 100 100 m 200 210 l 20 0 l 0 10 l -20 0 " />
+  <path style="fill:lightskyblue;stroke-width:2;stroke:black;" id="PO_17" d="M 100 100 m 200 230 l 20 0 l 0 10 l -20 0 " />
+  <path style="fill:lightskyblue;stroke-width:2;stroke:black;" id="PO_16" d="M 100 100 m 200 250 l 20 0 l 0 10 l -20 0 " />
+  <path style="fill:lightskyblue;stroke-width:2;stroke:black;" id="PO_15" d="M 100 100 m 200 270 l 20 0 l 0 10 l -20 0 " />
+  <text startOffset="0" style=" font-size:10; fill:#000000" y="380" x="250">
+    15 P1[0]
+  </text>
+  <text startOffset="0" id="PINDIPLAYNAME_Port_1_0" text-anchor="start" style=" font-size:10; fill:#000000" y="380" x="324">
+    Port_1_0
+  </text>
+  <text startOffset="0" style=" font-size:10; fill:#000000" y="360" x="250">
+    16 P1[2]
+  </text>
+  <text startOffset="0" id="PINDIPLAYNAME_Port_1_2" text-anchor="start" style=" font-size:10; fill:#000000" y="360" x="324">
+    Port_1_2
+  </text>
+  <text startOffset="0" style=" font-size:10; fill:#000000" y="340" x="250">
+    17 P1[4]
+  </text>
+  <text startOffset="0" id="PINDIPLAYNAME_Port_1_4" text-anchor="start" style=" font-size:10; fill:#000000" y="340" x="324">
+    Port_1_4
+  </text>
+  <text startOffset="0" style=" font-size:10; fill:#000000" y="320" x="250">
+    18 P1[6]
+  </text>
+  <text startOffset="0" id="PINDIPLAYNAME_Port_1_6" text-anchor="start" style=" font-size:10; fill:#000000" y="320" x="324">
+    Port_1_6
+  </text>
+  <text startOffset="0" style=" font-size:10; fill:#000000" y="300" x="250">
+    19 XRES
+  </text>
+  <text startOffset="0" id="PINDIPLAYNAME_" text-anchor="start" style=" font-size:10; fill:#000000" y="300" x="324">
+    
+  </text>
+  <text startOffset="0" style=" font-size:10; fill:#000000" y="280" x="250">
+    20 P2[0]
+  </text>
+  <text startOffset="0" id="PINDIPLAYNAME_Port_2_0" text-anchor="start" style=" font-size:10; fill:#000000" y="280" x="324">
+    Port_2_0
+  </text>
+  <text startOffset="0" style=" font-size:10; fill:#000000" y="260" x="250">
+    21 P2[2]
+  </text>
+  <text startOffset="0" id="PINDIPLAYNAME_Port_2_2" text-anchor="start" style=" font-size:10; fill:#000000" y="260" x="324">
+    Port_2_2
+  </text>
+  <text startOffset="0" style=" font-size:10; fill:#000000" y="240" x="250">
+    22 P2[4]
+  </text>
+  <text startOffset="0" id="PINDIPLAYNAME_Port_2_4" text-anchor="start" style=" font-size:10; fill:#000000" y="240" x="324">
+    Port_2_4
+  </text>
+  <text startOffset="0" style=" font-size:10; fill:#000000" y="220" x="250">
+    23 P2[6]
+  </text>
+  <text startOffset="0" id="PINDIPLAYNAME_Port_2_6" text-anchor="start" style=" font-size:10; fill:#000000" y="220" x="324">
+    Port_2_6
+  </text>
+  <text startOffset="0" style=" font-size:10; fill:#000000" y="200" x="250">
+    24 P0[0]
+  </text>
+  <text startOffset="0" id="PINDIPLAYNAME_Port_0_0" text-anchor="start" style=" font-size:10; fill:#000000" y="200" x="324">
+    Port_0_0
+  </text>
+  <text startOffset="0" style=" font-size:10; fill:#000000" y="180" x="250">
+    25 P0[2]
+  </text>
+  <text startOffset="0" id="PINDIPLAYNAME_Port_0_2" text-anchor="start" style=" font-size:10; fill:#000000" y="180" x="324">
+    Port_0_2
+  </text>
+  <text startOffset="0" style=" font-size:10; fill:#000000" y="160" x="250">
+    26 P0[4]
+  </text>
+  <text startOffset="0" id="PINDIPLAYNAME_Port_0_4" text-anchor="start" style=" font-size:10; fill:#000000" y="160" x="324">
+    Port_0_4
+  </text>
+  <text startOffset="0" style=" font-size:10; fill:#000000" y="140" x="250">
+    27 P0[6]
+  </text>
+  <text startOffset="0" id="PINDIPLAYNAME_Port_0_6" text-anchor="start" style=" font-size:10; fill:#000000" y="140" x="324">
+    Port_0_6
+  </text>
+  <text startOffset="0" style=" font-size:10; fill:#000000" y="120" x="250">
+    28 VDD
+  </text>
+  <text startOffset="0" id="PINDIPLAYNAME_" text-anchor="start" style=" font-size:10; fill:#000000" y="120" x="324">
+    
+  </text>
+  <rect height="0" width="0" />
+  <rect height="0" width="0" />
+  <rect height="0" width="0" />
+  <rect height="0" width="0" />
+  <rect height="0" width="0" />
+  <rect height="0" width="0" />
+  <rect height="0" width="0" />
+  <rect height="0" width="0" />
+  <rect height="0" width="0" />
+</svg>

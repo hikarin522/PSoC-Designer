@@ -1,0 +1,138 @@
+Starting MAKE...
+psocmakemake.exe stepping_test -oproject.mk
+
+creating project.mk 
+
+mkdepend.exe -f project.dep -p./obj/ -o.o -- -IC:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include -I./lib -I./std -I. -IC:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C29~1  -- l6470.c main.c  boot.asm
+
+mkdepend.exe @mkdep
+
+mkdepend.exe @mkdep
+
+if exist output\stepping_test.rom del /F /Q  output\stepping_test.rom
+
+if exist output\stepping_test.hex del /F /Q  output\stepping_test.hex
+
+iasm8c.exe -IC:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include -I./lib -I./std -I. -IC:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C29~1   -g -o lib/obj/cs.o lib/cs.asm
+
+iasm8c.exe -IC:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include -I./lib -I./std -I. -IC:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C29~1   -g -o lib/obj/lcd_1.o lib/lcd_1.asm
+
+iasm8c.exe -IC:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include -I./lib -I./std -I. -IC:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C29~1   -g -o lib/obj/psocconfig.o lib/psocconfig.asm
+
+iasm8c.exe -IC:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include -I./lib -I./std -I. -IC:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C29~1   -g -o lib/obj/psocconfigtbl.o lib/psocconfigtbl.asm
+
+iasm8c.exe -IC:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include -I./lib -I./std -I. -IC:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C29~1   -g -o lib/obj/sleeptimer_1.o lib/sleeptimer_1.asm
+
+iasm8c.exe -IC:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include -I./lib -I./std -I. -IC:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C29~1   -g -o lib/obj/sleeptimer_1int.o lib/sleeptimer_1int.asm
+
+iasm8c.exe -IC:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include -I./lib -I./std -I. -IC:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C29~1   -g -o lib/obj/spim_1.o lib/spim_1.asm
+
+iasm8c.exe -IC:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include -I./lib -I./std -I. -IC:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C29~1   -g -o lib/obj/spim_1int.o lib/spim_1int.asm
+
+ilibw.exe -a lib/libpsoc.a lib/obj/cs.o  
+
+ilibw.exe -a lib/libpsoc.a lib/obj/lcd_1.o  
+
+ilibw.exe -a lib/libpsoc.a lib/obj/psocconfig.o  
+
+ilibw.exe -a lib/libpsoc.a lib/obj/psocconfigtbl.o  
+
+ilibw.exe -a lib/libpsoc.a lib/obj/sleeptimer_1.o  
+
+ilibw.exe -a lib/libpsoc.a lib/obj/sleeptimer_1int.o  
+
+ilibw.exe -a lib/libpsoc.a lib/obj/spim_1.o  
+
+ilibw.exe -a lib/libpsoc.a lib/obj/spim_1int.o
+
+iccm8c.exe -g -e -c -Wf-LMM8 -D_LMM  -IC:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include -I./lib -I./std -I. -IC:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C29~1   -o obj/l6470.o ./l6470.c
+
+!W C:\Users\hikari\DOCUME~1\PSOCDE~1.4PR\STEPPI~1\STEPPI~1\STEPPI~1\l6470.c(27):[warning] [MISRA 2712]old-style function definition for `L6470_SetStepMode'
+
+iccm8c.exe -g -e -c -Wf-LMM8 -D_LMM  -IC:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include -I./lib -I./std -I. -IC:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C29~1   -o obj/main.o ./main.c
+
+iasm8c.exe -IC:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include -I./lib -I./std -I. -IC:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C29~1   -g -n -o obj/boot.o ./boot.asm
+
+Linking with linkfile 
+
+-F0x30 -g -blit:0x1a0.0x7fff 
+
+ -bdata:0.0x6ff -rwh:SSCParmBlk:0x00F7.0x00FF -BIlib -I./std -I. -IC:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C29~1   -g -n -o obj/boot.o ./boot.asm
+
+nterruptRAM:0 -Bvirtual_registers -O -elim:UserModules -lfpm8c  
+
+ -Bstepping_test_RAM 
+
+ -o"output/stepping_test" 
+
+obj/l6470.o obj/main.o 	
+
+ ./lib/libPSoc.a -LC:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/lib/LMM/eightpages C:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/lib/CY8C29000/cms.a C:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/lib/LMM/UASW/MAC/arith.a  
+
+ilinkm8c.exe -u ./obj/boot.o @linkfile
+
+LMM info: area 'InterruptRAM' uses 8 bytes in SRAM bank 0
+
+LMM info: area 'data' item of 25 bytes allocated in SRAM page 0
+
+LMM info: area 'data' item of 17 bytes allocated in SRAM page 0
+
+LMM info: area 'data' item of 15 bytes allocated in SRAM page 0
+
+LMM info: area 'virtual_registers' uses 15 bytes in SRAM page 0
+
+LMM info: area 'data' item of 2 bytes allocated in SRAM page 0
+
+symbol SleepTimer_1_SetInterval is unused
+
+symbol SleepTimer_1_bGetTickCntr is unused
+
+symbol _CS_Invert is unused
+
+symbol SPIM_1_Stop is unused
+
+symbol LCD_1_InitBG is unused
+
+symbol SPIM_1_DisableInt is unused
+
+symbol SleepTimer_1_SetTimer is unused
+
+symbol SleepTimer_1_SyncWait is unused
+
+symbol LCD_1_InitVBG is unused
+
+symbol _LCD_1_DrawBG is unused
+
+symbol SleepTimer_1_bGetTimer is unused
+
+symbol _CS_GetState is unused
+
+symbol _LCD_1_DrawVBG is unused
+
+symbol SleepTimer_1_Stop is unused
+
+symbol SleepTimer_1_DisableInt is unused
+
+symbol LCD_1_PrHexInt is unused
+
+311 bytes unused code deleted
+
+13884 bytes before Code Compression, 11841 after. 11% reduction.
+
+idata dump at output/stepping_test.idata
+
+  ROM 39% full. 12758 out of 32768 bytes used (does not include absolute areas).
+
+  RAM 5% full. 82 bytes used (does not include stack usage).
+
+Built with ICCM8C STD V7.05.00
+
+ilstm8c.exe -r output/stepping_test.rom
+
+verlst.exe stepping_test C:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools
+
+makehex.exe output/stepping_test.rom FlashSecurity.txt 0x7fff 0x30 output/stepping_test.hex
+
+ 
+stepping_test - 0 error(s) 1 warning(s) 07:49:59
+
