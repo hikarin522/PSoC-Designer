@@ -25,7 +25,7 @@ void L6470_SetKVAL(enum L6470_KVAL_Reg kval, BYTE param)
 
 void L6470_SetStepMode(enum L6470_Step_Mode stepMode)
 {
-	SPI_transceiver()
+	SPI_transceiver(stepMode);
 }
 
 void L6470_Run(LONG speed)

@@ -7,6 +7,8 @@
 #include <stdio.h>
 #include "L6470.h"
 
+void Boundary_Tag_Start(void);
+
 void LCD_print(char *str);
 void LCD_cprint(const char *str);
 
@@ -15,6 +17,8 @@ void main(void)
 	BYTE i = 0xff;
 	LONG j;
 	M8C_EnableGInt;
+	
+	Boundary_Tag_Start();
 	
 	CS_Start();
 	CS_Off();

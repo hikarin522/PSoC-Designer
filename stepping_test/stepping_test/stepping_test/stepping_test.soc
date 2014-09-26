@@ -10,32 +10,495 @@
 			<SOURCE_FILE_LIST>
 				<SOURCE_FILE NAME="main.c" TYPE="UserSourceModule" LANGUAGE="C"/>
 				<SOURCE_FILE NAME="flashsecurity.txt" TYPE="TextFile" LANGUAGE="" OVERLAY_NAME=""/>
-				<SOURCE_FILE NAME="psocapi.h" TYPE="LibraryIncludeFile" LANGUAGE="C" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE="" FILEMODTIME="181712400" LIBTIME="1"/>
-				<SOURCE_FILE NAME="psocapi.inc" TYPE="LibraryIncludeFile" LANGUAGE="ASM" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE="" FILEMODTIME="181712400" LIBTIME="3"/>
+				<SOURCE_FILE NAME="psocapi.h" TYPE="LibraryIncludeFile" LANGUAGE="C" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE="" FILEMODTIME="389048128" LIBTIME="1"/>
+				<SOURCE_FILE NAME="psocapi.inc" TYPE="LibraryIncludeFile" LANGUAGE="ASM" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE="" FILEMODTIME="389048128" LIBTIME="3"/>
 				<SOURCE_FILE NAME="memory.inc" TYPE="UserIncludeFile" LANGUAGE="ASM" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE=""/>
-				<SOURCE_FILE NAME="psocgpioint.inc" TYPE="LibraryIncludeFile" LANGUAGE="ASM" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE="" FILEMODTIME="102424432" LIBTIME="229109571"/>
 				<SOURCE_FILE NAME="l6470.c" TYPE="UserSourceModule" LANGUAGE="C" OVERLAY_NAME="" USER_FILE="TRUE" PATH_IN_TREE=""/>
 				<SOURCE_FILE NAME="l6470.h" TYPE="UserIncludeFile" LANGUAGE="C" OVERLAY_NAME="" USER_FILE="TRUE" PATH_IN_TREE=""/>
-				<SOURCE_FILE NAME="cs.asm" TYPE="LibrarySource" LANGUAGE="ASM" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE="" FILEMODTIME="4192091" LIBTIME="2009457548"/>
-				<SOURCE_FILE NAME="cs.h" TYPE="LibraryIncludeFile" LANGUAGE="ASM" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE="" FILEMODTIME="4192091" LIBTIME="2009457548"/>
-				<SOURCE_FILE NAME="cs.inc" TYPE="LibraryIncludeFile" LANGUAGE="ASM" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE="" FILEMODTIME="4192091" LIBTIME="2009457548"/>
-				<SOURCE_FILE NAME="lcd_1.h" TYPE="LibraryIncludeFile" LANGUAGE="ASM" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE="" FILEMODTIME="4192091" LIBTIME="2009457548"/>
-				<SOURCE_FILE NAME="lcd_1.inc" TYPE="LibraryIncludeFile" LANGUAGE="ASM" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE="" FILEMODTIME="4192091" LIBTIME="2009457548"/>
-				<SOURCE_FILE NAME="lcd_1.asm" TYPE="LibrarySource" LANGUAGE="ASM" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE="" FILEMODTIME="4192091" LIBTIME="2009457548"/>
-				<SOURCE_FILE NAME="spim_1.asm" TYPE="LibrarySource" LANGUAGE="ASM" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE="" FILEMODTIME="4192091" LIBTIME="2009457548"/>
-				<SOURCE_FILE NAME="spim_1int.asm" TYPE="LibrarySource" LANGUAGE="ASM" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE="" FILEMODTIME="4192091" LIBTIME="2009457548"/>
-				<SOURCE_FILE NAME="spim_1.inc" TYPE="LibraryIncludeFile" LANGUAGE="ASM" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE="" FILEMODTIME="4192091" LIBTIME="2009457548"/>
-				<SOURCE_FILE NAME="spim_1.h" TYPE="LibraryIncludeFile" LANGUAGE="ASM" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE="" FILEMODTIME="4192091" LIBTIME="2009457548"/>
-				<SOURCE_FILE NAME="sleeptimer_1.h" TYPE="LibraryIncludeFile" LANGUAGE="ASM" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE="" FILEMODTIME="4192091" LIBTIME="2009457548"/>
-				<SOURCE_FILE NAME="sleeptimer_1.inc" TYPE="LibraryIncludeFile" LANGUAGE="ASM" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE="" FILEMODTIME="4192091" LIBTIME="2009457548"/>
-				<SOURCE_FILE NAME="sleeptimer_1.asm" TYPE="LibrarySource" LANGUAGE="ASM" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE="" FILEMODTIME="4192091" LIBTIME="2009457548"/>
-				<SOURCE_FILE NAME="sleeptimer_1int.asm" TYPE="LibrarySource" LANGUAGE="ASM" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE="" FILEMODTIME="4192091" LIBTIME="2009457548"/>
-				<SOURCE_FILE NAME="psocconfigtbl.asm" TYPE="LibrarySource" LANGUAGE="ASM" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE="" FILEMODTIME="102424432" LIBTIME="229107987"/>
-				<SOURCE_FILE NAME="psocgpioint.h" TYPE="LibraryIncludeFile" LANGUAGE="ASM" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE="" FILEMODTIME="102424432" LIBTIME="229109571"/>
-				<SOURCE_FILE NAME="psocconfig.asm" TYPE="LibrarySource" LANGUAGE="ASM" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE="" FILEMODTIME="102424432" LIBTIME="229111150"/>
+				<SOURCE_FILE NAME="allocator_boundary_tag.c" TYPE="UserSourceModule" LANGUAGE="C" OVERLAY_NAME="" USER_FILE="TRUE" PATH_IN_TREE=""/>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<SOURCE_FILE NAME="cs.asm" TYPE="LibrarySource" LANGUAGE="ASM" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE="" FILEMODTIME="45332580" LIBTIME="2001462156"/>
+				<SOURCE_FILE NAME="cs.h" TYPE="LibraryIncludeFile" LANGUAGE="ASM" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE="" FILEMODTIME="45332580" LIBTIME="2001462156"/>
+				<SOURCE_FILE NAME="cs.inc" TYPE="LibraryIncludeFile" LANGUAGE="ASM" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE="" FILEMODTIME="45332580" LIBTIME="2001462156"/>
+				<SOURCE_FILE NAME="lcd_1.h" TYPE="LibraryIncludeFile" LANGUAGE="ASM" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE="" FILEMODTIME="45332580" LIBTIME="2001462156"/>
+				<SOURCE_FILE NAME="lcd_1.inc" TYPE="LibraryIncludeFile" LANGUAGE="ASM" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE="" FILEMODTIME="45332580" LIBTIME="2001462156"/>
+				<SOURCE_FILE NAME="lcd_1.asm" TYPE="LibrarySource" LANGUAGE="ASM" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE="" FILEMODTIME="45332580" LIBTIME="2001462156"/>
+				<SOURCE_FILE NAME="spim_1.asm" TYPE="LibrarySource" LANGUAGE="ASM" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE="" FILEMODTIME="45332580" LIBTIME="2001462156"/>
+				<SOURCE_FILE NAME="spim_1int.asm" TYPE="LibrarySource" LANGUAGE="ASM" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE="" FILEMODTIME="45332580" LIBTIME="2001462156"/>
+				<SOURCE_FILE NAME="spim_1.inc" TYPE="LibraryIncludeFile" LANGUAGE="ASM" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE="" FILEMODTIME="45332580" LIBTIME="2001462156"/>
+				<SOURCE_FILE NAME="spim_1.h" TYPE="LibraryIncludeFile" LANGUAGE="ASM" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE="" FILEMODTIME="45332580" LIBTIME="2001462156"/>
+				<SOURCE_FILE NAME="sleeptimer_1.h" TYPE="LibraryIncludeFile" LANGUAGE="ASM" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE="" FILEMODTIME="45332580" LIBTIME="2001462156"/>
+				<SOURCE_FILE NAME="sleeptimer_1.inc" TYPE="LibraryIncludeFile" LANGUAGE="ASM" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE="" FILEMODTIME="45332580" LIBTIME="2001462156"/>
+				<SOURCE_FILE NAME="sleeptimer_1.asm" TYPE="LibrarySource" LANGUAGE="ASM" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE="" FILEMODTIME="45332580" LIBTIME="2001462156"/>
+				<SOURCE_FILE NAME="sleeptimer_1int.asm" TYPE="LibrarySource" LANGUAGE="ASM" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE="" FILEMODTIME="45332580" LIBTIME="2001462156"/>
+				<SOURCE_FILE NAME="psocconfigtbl.asm" TYPE="LibrarySource" LANGUAGE="ASM" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE="" FILEMODTIME="158458480" LIBTIME="260767148"/>
+				<SOURCE_FILE NAME="psocgpioint.inc" TYPE="LibraryIncludeFile" LANGUAGE="ASM" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE="" FILEMODTIME="158458480" LIBTIME="260767276"/>
+				<SOURCE_FILE NAME="psocgpioint.h" TYPE="LibraryIncludeFile" LANGUAGE="ASM" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE="" FILEMODTIME="158458480" LIBTIME="260767276"/>
+				<SOURCE_FILE NAME="psocconfig.asm" TYPE="LibrarySource" LANGUAGE="ASM" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE="" FILEMODTIME="158458480" LIBTIME="260767911"/>
 				<SOURCE_FILE NAME="boot.asm" TYPE="UserSourceModule" LANGUAGE="ASM" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE=""/>
-				<SOURCE_FILE NAME="globalparams.inc" TYPE="LibraryIncludeFile" LANGUAGE="ASM" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE="" FILEMODTIME="102424432" LIBTIME="229110286"/>
-				<SOURCE_FILE NAME="globalparams.h" TYPE="LibraryIncludeFile" LANGUAGE="ASM" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE="" FILEMODTIME="102424432" LIBTIME="229110286"/>
+				<SOURCE_FILE NAME="globalparams.inc" TYPE="LibraryIncludeFile" LANGUAGE="ASM" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE="" FILEMODTIME="158458480" LIBTIME="260767271"/>
+				<SOURCE_FILE NAME="globalparams.h" TYPE="LibraryIncludeFile" LANGUAGE="ASM" OVERLAY_NAME="" USER_FILE="FALSE" PATH_IN_TREE="" FILEMODTIME="158458480" LIBTIME="260767271"/>
 			</SOURCE_FILE_LIST>
 			<LIB_FILE_LIST>
 				<LIB_FILE NAME="libPSoC.a" TYPE="UserLibrary">
@@ -43,6 +506,8 @@
 			</LIB_FILE_LIST>
 		</FILE_LIST>
 		<BUILD_SETTINGS>
+			
+			
 			<BUILD COMPILER="IMAGECRAFT" INCLUDE_PATH="C:\PROGRA~2\Cypress\PSOCDE~1\5.4\Common\CY110F~1\tools\include\CY8C29~1"/>
 		</BUILD_SETTINGS>
 		<MISC>
@@ -57,11 +522,29 @@
 		</MISC>
 	</APPLICATION>
 	<PROJECT_SETTINGS>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		<SECTION SECTION_NAME="Linker Settings" VENDOR="HI-TECH" LIB_PATH="" LIBS="" OPTIONS=""/>
 		<SECTION SECTION_NAME="Linker Settings" VENDOR="IMAGECRAFT" LIB_PATH="" LIBS="" RELOC_ADDR_START="416" ENABLE_ALIGN_SHIFT="0" ENABLE_24MHZ_WARNING="0" ALLOW_24MHZSHIFTOPTS="0"/>
 		<SECTION SECTION_NAME="Linker Settings" VENDOR="ImageCraftPro" LIB_PATH="" LIBS="" RELOC_ADDR_START="416" ENABLE_ALIGN_SHIFT="0" ENABLE_24MHZ_WARNING="0" ALLOW_24MHZSHIFTOPTS="0"/>
 		<SECTION SECTION_NAME="Compiler Settings" VENDOR="HI-TECH" ADDITIONAL_INCLUDE_PATH="" MACRO_DEFINES="" MACRO_UNDEFINES="" OPTIONS="" ATTR_GLOBAL_OPT="1" ASSEMBLER_OPT="1" OPTIMIZATIONS="9" WARNING_LEVEL="0" INHERIT="-1"/>
-		<SECTION SECTION_NAME="Compiler Settings" VENDOR="IMAGECRAFT" ADDITIONAL_INCLUDE_PATH="" MACRO_DEFINES="" MACRO_UNDEFINES="" ENABLE_CODE_COMPRESSOR="1" ENABLE_UM_DEAD_CODE_ELIM="1" ENABLE_MAC="1" ENABLE_MATH_OPTIMIZE="1" ENABLE_PAGING="1" STACKPAGE_OFFSET="0" CSFLOW="0" MAC_ALLOWED="1" USE_CONST_AS_FLASH="1" INHERIT="0"/>
+		<SECTION SECTION_NAME="Compiler Settings" VENDOR="IMAGECRAFT" ADDITIONAL_INCLUDE_PATH="" MACRO_DEFINES="" MACRO_UNDEFINES="" ENABLE_CODE_COMPRESSOR="1" ENABLE_UM_DEAD_CODE_ELIM="1" ENABLE_MAC="1" ENABLE_MATH_OPTIMIZE="1" ENABLE_PAGING="1" STACKPAGE_OFFSET="0" CSFLOW="0" MAC_ALLOWED="1" USE_CONST_AS_FLASH="1" INHERIT="0" STACK_PAGE="Page 7"/>
 		<SECTION SECTION_NAME="Compiler Settings" VENDOR="ImageCraftPro" ADDITIONAL_INCLUDE_PATH="" MACRO_DEFINES="" MACRO_UNDEFINES="" ENABLE_CODE_COMPRESSOR="0" ENABLE_UM_DEAD_CODE_ELIM="0" ENABLE_MAC="1" ENABLE_MATH_OPTIMIZE="0" ENABLE_PAGING="1" STACKPAGE_OFFSET="0" CSFLOW="0" MAC_ALLOWED="1" USE_CONST_AS_FLASH="1" ENABLE_PRO_OPTS="1" ELIM_USER_UNUSED_CODE="1" PRO_OPT_FOR_SPEED="0" INHERIT="-1"/>
 		<SECTION SECTION_NAME="Programmer Settings" RESET_DEVPROGRAMMER="1"/>
 		<SECTION SECTION_NAME="Device Editor Settings" CONFIGINIT_TYPE_LOOP="1" ENABLE_INTERRUPT_GEN_CTRL="1" ENABLE_CONFIGNAME_PREPEND="1" GENERATE_APP="1" UPDATE_ENABLED="1" LOCK_EXPRESS_RESOURCES="1" GENPROJECT_DISABLED="0"/>
