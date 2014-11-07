@@ -1,6 +1,4 @@
 # DO NOT DELETE
-./obj/allocator_boundary_tag.o : \
-   C:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C29~1/m8c.h
 ./obj/boot.o : \
    C:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C29~1/m8c.inc\
    C:/PROGRA~2/Cypress/PSOCDE~1/5.4/Common/CY110F~1/tools/include/CY8C29~1/m8ssc.inc\

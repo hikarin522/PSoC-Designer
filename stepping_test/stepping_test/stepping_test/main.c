@@ -7,7 +7,13 @@
 #include <stdio.h>
 #include "L6470.h"
 
-void Boundary_Tag_Start(void);
+
+#pragma ram_abs_address:0x0200
+unsigned char buf1[256];
+#pragma end_abs_address
+#pragma ram_abs_address:0x0300
+unsigned char buf2[256];
+#pragma end_abs_address
 
 void LCD_print(char *str);
 void LCD_cprint(const char *str);
@@ -15,11 +21,12 @@ void LCD_cprint(const char *str);
 void main(void)
 {
 	BYTE i = 0xff;
+	unsigned char *pbuf;
 	LONG j;
+	char strbuf[17];
+	
 	M8C_EnableGInt;
-	
-	Boundary_Tag_Start();
-	
+
 	CS_Start();
 	CS_Off();
 	
@@ -33,6 +40,29 @@ void main(void)
 	LCD_1_Start();
 	LCD_cprint("PSoC Start");
 
+	buf2[0] = 0x55;
+	buf1[255] = 0x0f;
+	buf1[0] = 0xf0;
+	csprintf(strbuf, "%x, %x, %x", buf1[0], buf1[255], buf2[0]);
+	LCD_print(strbuf);
+	pbuf = buf1;
+	pbuf[256] = 0x33;
+	csprintf(strbuf, "%x, %x, %x", buf1[0], buf1[255], buf2[0]);
+	LCD_print(strbuf);
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	while (1);
+	
 	LCD_cprint("Send Command");
 	L6470_SetKVAL(L6470_KVAL_RUN, 0xff);
 	L6470_SetKVAL(L6470_KVAL_ACC, 0xff);
